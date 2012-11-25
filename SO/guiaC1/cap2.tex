@@ -1,0 +1,85 @@
+\begin{itemize}
+\item[\textbf{2.4}]\emph{ ?`Cu\'ales son las 3 mayores actividades de un SO con respecto a la administraci\'on de almacenamiento secundario?}\\
+R:
+\begin{itemize}
+	\item Administraci\'on de espacio libre(Free-space management)
+	\item Asignacion de almacenamiento(storage allocation)
+	\item Planificacion de disco(disk scheduling)
+\end{itemize}
+\item[\textbf{2.7}] \emph{?`Cu\'al es el prop\'osito de los programas de sistemas?}\\
+R:\\
+Los programas de sistema se pueden considerar como paquetes de utiles llamadas de sistema.Ellos proveen funcionalidades basicas a los usuarios entonces esos usuarios no tienen necesidad de escribir sus propios programas para resolver problemas comunes.
+\item[\textbf{2.10}]\emph{?`Por qu\'e algunos sistemas guardan el SO en un firmware, mientras otros lo hacen en el disco duro?}\\
+R:\\
+Para ciertos dispositivos, como PDAs y celulares, un disco con un sistema de archivos puede no estar disponible para el dispositivo.En estos casos el SO debe ser almacenado en el firmware.
+\item[\textbf{2.15}]\emph{?`Cu\'ales son las 5 mayores actividades de un SO con respecto al manejo de archivos?}\\
+R:
+\begin{enumerate}
+	\item Creacion y Eliminacion de archivos.
+ 	\item Creacion y Eliminacion de direcciones.
+ 	\item El soporte de primitivas para manipular archivos y direcciones.
+ 	\item El mapeo de archivos en el almacenamiento secundario
+ 	\item El respaldo de archivos en es medios de almacenamiento estable
+\end{enumerate}
+
+\item[\textbf{2.16}]\emph{?`Cu\'ales son las ventajas y desventajas de usar la misma interfaz de llamadas de sistema para manipular archivos y dispositivos?}\\
+R:\\
+\item[\textbf{2.18}]\emph{?`Cu\'ales son los 2 modelos de la comunicaci\'on ``interprocesos''??`Cu\'ales son las debilidades y fortalezas de los 2 enfoques?}\\
+R:
+\begin{itemize}
+	\item Shared-Memory Level:
+		\begin{itemize}
+			\item Fortaleza:rapida, cuando los procesos estan en la misma maquina
+			\item Debilidad: Procesos diferentes necesitan asegurarse de que no estan esribiendo en el mismo lugar al mismo tiempo.Los procesos necesitan abordar problemas de proteccion de memoria y sincronizacion.
+		\end{itemize}
+	\item Message-passing model:
+		\begin{itemize}
+	       		\item Fortaleza:facil de implementar que el anterior
+	       		\item Debilidad:lento, porque se considera el tiempo de la configuracion de la conexion
+	       	\end{itemize}
+\end{itemize}
+
+\item[\textbf{2.20}]\emph{A veces es difícil lograr un enfoque por capas si dos componentes del SO son dependientes el uno del otro. 
+Identificar un escenario en el cual no est\'a claro como lograr el enfoque de capas de dos componentes del sistema que estan estrechamente unidos a sus funcionalidades.}\\
+\textcolor{red}{R:}
+Cuando se quiere utilizar un servicio, s\'olo puede utilizar los servicios de niveles inferiores.\\
+Entonces si tenemos un servicio de un nivel que necesite alguna llamada extraordinaria de un nivel superior y el resto de las llamadas sean a niveles inferiores, estaria mal hecho el enfoque por capas, porque NO se puede dejar que se necesiten los niveles superiores.un ejemplo concreto...nose..
+
+\item[\textbf{2.21}]\emph{?`Cu\'al es la ventaja principal de un microkernel enfocado al diseño de sistemas?}\\
+R:\\
+Los beneficios normalmente incluyen los siguientes:
+\begin{itemize}
+	\item a\~nadir un nuevo servicio no requiere modificaci\'on del kernel
+	\item es mas seguro hacer operaciones en modo usuario que en modo kernel
+	\item un dise\~no simple de kernel y resultados funcionales tipicosen un so mas fiable.
+\end{itemize}
+
+\emph{?`C\'omo interactuan los programas de usuarios y servicios de sistema en la arquitectura microkernel?}\\
+R:\\
+Se comunican mediante \emph{paso de mensajes}, el programa de usuario y el servicio nunca interactuan directamente, se comunican de manera indirecta intercambiando mensajes con el microkernel.
+
+\emph{?`Cu\'ales son las desventajas de usar el enfoque microkernel?}\\
+R:\\
+Sus principales dificultades son:
+\begin{itemize}
+	\item la complejidad en la sincronizaci\'on de todos los m\'odulos que componen el microkernel y su acceso a la memoria
+	\item mas sw de interfaz es necesario, existe la posibilidad de una perdida de rendimiento
+	\item Mensajes de bugs pueden ser mas dificil de arreglar debido al largo viaje que tienen que tomar en comparacion a un kernel mononucleo.
+    	\item Proceso de gestion en general puede ser muy complicado.
+\end{itemize}
+\item[\textbf{2.22}]\emph{?`En qu\'e formas es el enfoque de kernel modular similar al ``layered approach''(enfoque de capas)?}\\
+R:\\
+El enfoque de kernel modular requiere que el subsistema interactue
+unos con otros a traves de interfaces cuidadosamente construidas que
+se suelen reducir (en terminos de la funcionalidad que esta expuesta
+a modulos externos). El Enfoque de kernel de capas es similar en este
+aspecto.
+\emph{?`En cu\'antas formas es diferente?}\\
+R:\\
+El enfoque de kernel de capas impone un orden estricto de subsistemas
+de tal forma que en que en los subsistemas de capas inferiores no estan
+autorizados para invocar operaciones correspondientes a capas mas altas
+en otros subsistemas.
+No hay restricciones en el enfoque de kernel modular, aqui los modulos
+son libres de invocar operaciones unos con otros.
+\end{itemize}

@@ -1,0 +1,130 @@
+9.2 
+ P -> Largo string de referencia
+ n -> numero de frames distintos en P
+ m -> numero de 
+
+a) limite inferior -> mejor caso
+	Suponemos que m > n
+		Por lo tanto, el mejor caso es N page faults
+b) limite superior -> peor caso
+	Suponemos m = 1
+		P page faults
+
+-----------------------------------------
+
+9.4 
+	a) LRU
+	b) FIFO
+	c) MIN
+	d) Second Chance
+
+	b y d) Los dos sufren de la anomalia de belani
+
+Orden de mejor a peor:  MIN, LRU, Second Chance, FIFO
+
+-----------------------------------------
+
+9.20: The virtual address in binary form is:
+
+0001 0001 0001 0010 0011 0100 0101 0110
+
+Since the page size is 212, the page table size is 220. Therefore the loworder
+12 bits “0100 0101 0110” are used as the displacement into the page,
+while the remaining 20 bits “0001 0001 0001 0010 0011” are used as the
+displacement in the page table.
+
+VM: 2^32 B = 4 GB
+PM: 2^18 = 256 MB
+pagina: 4096B
+proceso -> 11123456
+
+VM Sistema Pags: 2^32/2^12 = 1048576
+VM Sistema fisicas: 2^18/2^6 = 2^6 = 64
+
+direccion: 11123456/4096 = 2715,6875
+0,6875*4096 = 2816
+P   B
+|2715|2816|
+-----------------------------------------
+
+9.23 
+
+paginas -> 12 bits virtual y fisico
+paginas 256 B -> 0x100
+Lista de frames libres: D, E , F
+______________
+|Pag|Pag Frame|
+|0|-|
+|1|2|
+|2|C|
+|3|A|
+|4|-|
+|5|4|
+|6|3|
+|7|-|
+|8|B|
+|9|0|
+
+* 9EF -> pag 9, offset EF  = 0EF 
+* 111 => pag 1, offset 11  = 211
+* 700 -> pag 7, offset 00  = *D00
+* 0FF -> pag 0, offset FF  = *EFF
+
+----------------------------------------
+
+9.8 no la encuentro..
+
+---------------------------------------
+
+9.14
+
+	a)Puede ocurrir un TLB miss que termine en un no page fault? si puede
+		(translation lookaside buffer)
+	b) TLB miss   page fault? si puede
+	c) TLB hit    no page fault? si puede
+	d) TLB hit    page fault?  no puede
+
+-------------------------------------
+
+9.28: The system obviously is spending most of its time paging,
+indicating over-allocation of memory. If the level of multiprogramming
+is reduced resident processes would page fault less frequently and the
+CPU utilization would improve. Another way to improve performance
+would be to get more physical memory or a faster paging drum.
+a. Get a faster CPU—No.
+b. Get a bigger paging drum—No.
+c. Increase the degree of multiprogramming—No.
+d. Decrease the degree of multiprogramming—Yes.
+Installmoremainmemory—Likely to improve CPU utilization as
+more pages can remain resident and not require paging to or from
+the disks.
+f. Install a faster hard disk, or multiple controllers with multiple
+hard disks—Also an improvement, for as the disk bottleneck is
+removed by faster response and more throughput to the disks,
+the CPU will get more data more quickly.
+g. Add prepaging to the page fetch algorithms—Again, the CPU will
+getmore data faster, so it will be more in use. This is only the case
+if the paging action is amenable to prefetching (i.e., some of the
+access is sequential).
+h. Increase the page size—Increasing the page size will result in
+fewer page faults if data is being accessed sequentially. If data
+access is more or less random, more paging action could ensue
+because fewer pages can be kept in memory and more data is
+transferred per page fault. So this change is as likely to decrease
+utilization as it is to increase it.
+
+-------------------------------------------
+
+9.32: (x)= micri symbol
+effective access time = (0.8) × (1 (x)sec)
++ (0.1) × (2 (x)sec) + (0.1) × (5002 (x)sec)
+= 501.2 (x)sec
+= 0.5 millisec
+
+-------------------------------------------
+
+9.33: Thrashing is caused by underallocation of theminimum number
+of pages required by a process, forcing it to continuously page fault.
+The system can detect thrashing by evaluating the level of CPU utilization
+as compared to the level of multiprogramming. It can be eliminated
+by reducing the level of multiprogramming 

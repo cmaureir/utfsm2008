@@ -1,0 +1,48 @@
+8.11 Given five memory partitions of 100 KB, 500 KB, 200 KB, 300 KB, and 600 KB (in order), how
+would each of the first-fit, best-fit, and worst-fit algorithms place processes of 212 KB, 417 KB, 112
+KB, and 426 KB (in order)? Which algorithm makes the most efficient use of memory?
+(a) First-fit:
+(b) 212K is put in 500K partition
+(c) 417K is put in 600K partition
+(d) 112K is put in 288K partition (new partition 288K = 500K - 212K)
+(e) 426K must wait
+(f) Best-fit:
+(g) 212K is put in 300K partition
+(h) 417K is put in 500K partition
+(i) 112K is put in 200K partition
+(j) 426K is put in 600K partition
+(k) Worst-fit:
+(l) 212K is put in 600K partition
+(m) 417K is put in 500K partition
+(n) 112K is put in 388K partition
+(o) 426K must wait
+In this example, best-fit turns out to be the best.
+
+8.12 Most systems allow programs to allocate more memory to its address space during execution. Data
+allocated in the heap segments of programs are an example of such allocated memory. What is required
+to support dynamic memory allocation in the following schemes:
+(a) contiguous-memory allocation
+(b) pure segmentation
+(c) pure paging
+
+(a) contiguous-memory allocation: might require relocation of the entire program since there is not
+enough space for the program to grow its allocated memory space.
+(b) pure segmentation: might also require relocation of the segment that needs to be extended since
+there is not enough space for the segment to grow its allocated memory space.
+(c) pure paging: incremental allocation of new pages is possible in this scheme without requiring
+relocation of the programs address space.
+
+8.17 Assuming a 1 KB page size, what are the page numbers and offsets for
+the following address references (provided as decimal numbers):
+a. 2375
+b. 19366
+c. 30000
+d. 256
+e. 16385
+
+Answer:
+a. page = 1; offset = 327
+b. page = 18; offset = 934
+c. page = 29; offset = 304
+d. page = 0; offset = 256
+e. page = 16; offset = 1

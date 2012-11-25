@@ -1,0 +1,19 @@
+8.4 Consider a logical address space of eight pages of 1024 words each,
+mapped onto a physical memory of 32 frames.
+a. How many bits are there in the logical address?
+b. How many bits are there in the physical address?
+Answer:
+a. Logical address: 13 bits
+b. Physical address: 15 bits
+
+8.6 Describe a mechanism by which one segment could belong to the address
+space of two different processes.
+Answer: Since segment tables are a collection of base–limit registers,
+segmentscanbesharedwhenentriesinthesegmenttableoftwodifferent
+jobs point to the same physical location. The two segment tables must
+have identical base pointers, and the shared segment number must be
+the same in the two processes.
+
+8.9 Explain the difference between internal and external fragmentation.
+Internal fragmentation is the area ocupied by a process but can not be used by the process. This space is unusable by the system until the process release the space.
+External fragmentation exists when total free memory is enough for the new process but it's not contiguous and can't satisfy the request.   Storage is fragmented into small holes.

@@ -1,0 +1,46 @@
+7.17 Consider the dining-philosophers problem where the chopsticks are
+    placed at the center of the table and any two of them could be used
+    by a philosopher. Assume that requests for chopsticks are made one
+    at a time. Describe a simple rule for determining whether a particular
+request could be satisfied without causing deadlock given the current
+allocation of chopsticks to philosophers.
+
+Answer: The following rule prevents deadlock: when a philosopher
+makes a request for the first chopstick, do not satisfy the request only
+if there is no other philosopher with two chopsticks and if there is only
+one chopstick remaining.
+
+--------------------------------
+
+7.20 Consider the following snapshot of a system:
+                       Allocation            Max  Available
+                         ABCD               ABCD   ABCD
+          P0             0012               0012   1520
+          P1             1000               1750
+          P2             1354               2356
+          P3             0632               0652
+          P4             0014               0656
+
+
+Answer the following questions using the banker's algorithm:
+  a. What is the content of the matrix Need?
+  b. Is the system in a safe state?
+  c. If a request from process P1 arrives for (0,4,2,0), can the request
+     be granted immediately?
+
+Answer:
+  a. What is the content of the matrix Need? The values of Need for
+     processes P0 through P4 respectively are (0, 0, 0, 0), (0, 7, 5, 0), (1,
+     0, 0, 2), (0, 0, 2, 0), and (0, 6, 4, 2).
+  b. Is the system in a safe state? Yes. With Available being equal to (1,
+     5, 2, 0), either process P0 or P3 could run. Once process P3 runs, it
+     releases its resources which allow all other existing processes to
+     run.
+  c. If a request from process P1 arrives for (0,4,2,0), can the request
+     be granted immediately? Yes it can. This results in the value of
+     Available being (1, 1, 0, 0). One ordering of processes that can finish
+     is P0 , P2 , P3 , P1 , and P4 .
+
+---------------------------------
+
+

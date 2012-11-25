@@ -1,0 +1,101 @@
+7.2 Suppose that a system is in an unsafe state. Show that it is possible for
+the processes to complete their execution without entering a deadlock
+state.
+
+
+Answer: An unsafe state may not necessarily lead to deadlock, it just
+means that we cannot guarantee that deadlock will not occur. Thus, it
+is possible that a system in an unsafe state may still allow all processes
+to complete without deadlock occurring. Consider the situation where
+a system has 12 resources allocated among processes P0, P1, and P2. The
+resources are allocated according to the following policy:
+
+	Max Current Need
+P0      10    5      5
+P1       4    2      2
+P2       9    3      6
+
+for (int i = 0; i < n; i++) {
+	// first find a thread that can finish
+	for (int j = 0; j < n; j++) {
+		if (!finish[j]) {
+			boolean temp = true;
+			for (int k = 0; k < m; k++) {
+				if (need[j][k] > work[k])
+					temp = false;
+			}
+			if (temp) { // if this thread can finish
+				finish[j] = true;
+				for (int x = 0; x < m; x++)
+					work[x] += work[j][x];
+			}
+		}
+	}
+}
+Figure 7.1 Banker’s algorithm safety algorithm.
+
+Currently there are two resources available. This system is in an unsafe
+state as process P1 could complete, thereby freeing a total of four
+resources. But we cannot guarantee that processes P0 and P2 can complete.
+However, it is possible that a processmay release resources before
+requesting any further. For example, process P2 could release a resource,
+thereby increasing the total number of resources to five. This allows process
+P0 to complete, which would free a total of nine resources, thereby
+allowing process P2 to complete as well.
+
+---------------------------------------------
+
+7.4 Consider a computer system that runs 5,000 jobs per month with no
+deadlock-prevention or deadlock-avoidance scheme. Deadlocks occur
+about twice permonth, and the operatormust terminate and rerun about
+10 jobs per deadlock. Each job is worth about $2 (in CPU time), and the
+jobs terminated tend to be about half-done when they are aborted.
+A systems programmer has estimated that a deadlock-avoidance
+algorithm (like the banker’s algorithm) could be installed in the system
+with an increase in the average execution time per job of about 10 percent.
+Since the machine currently has 30-percent idle time, all 5,000 jobs per
+month could still be run, although turnaround time would increase by
+about 20 percent on average.
+
+a. What are the arguments for installing the deadlock-avoidance
+algorithm?
+b. What are the arguments against installing the deadlock-avoidance
+algorithm?
+
+
+Answer: An argument for installing deadlock avoidance in the system
+is thatwe could ensure deadlockwould never occur. In addition, despite
+the increase in turnaround time, all 5,000 jobs could still run.
+An argument against installing deadlock avoidance software is that
+deadlocks occur infrequently and they cost little when they do occur.
+
+
+-----------------------------------------------------
+
+7.6 Consider the following resource-allocation policy. Requests and releases
+for resources are allowed at any time. If a request for resources cannot
+be satisfied because the resources are not available, then we check any
+processes that are blocked, waiting for resources. If they have the desired
+resources, then these resources are taken away from them and are given
+to the requesting process. The vector of resources for which the process
+is waiting is increased to include the resources that were taken away.
+For example, consider a system with three resource types and the
+vector Available initialized to (4,2,2). If process P0 asks for (2,2,1), it gets
+them. If P1 asks for (1,0,1), it gets them. Then, if P0 asks for (0,0,1), it
+is blocked (resource not available). If P2 now asks for (2,0,0), it gets the
+available one (1,0,0) and one thatwas allocated to P0 (since P0 is blocked).
+P0’s Allocation vector goes down to (1,2,1) and its Need vector goes up to
+(1,0,1).
+a. Can deadlock occur? If you answer “yes”, give an example. If you
+answer “no,” specify which necessary condition cannot occur.
+b. Can indefinite blocking occur? Explain your answer.
+
+Answer:
+a. Deadlock cannot occur because preemption exists.
+b. Yes. A process may never acquire all the resources it needs if they
+are continuously preempted by a series of requests such as those
+of process C.
+
+-------------------------------------------------------------
+
+

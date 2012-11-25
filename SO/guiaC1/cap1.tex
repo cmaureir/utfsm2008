@@ -1,0 +1,148 @@
+\begin{itemize}
+\item[\textbf{1.8}] \emph{?`Cu\'ales de las siguientes instrucciones deber\'ia
+ser priviligiada?}\\
+R:
+	\begin{itemize}
+		\item \textcolor{red}{Set value of timer}
+		\item Read the clock
+		\item \textcolor{red}{Clear memory}
+		\item Issue a trap instruction
+		\item \textcolor{red}{Turn off interrupts}
+		\item \textcolor{red}{Modify entries in device-status table}
+		\item Switch from user to kernel mode
+		\item \textcolor{red}{Access I/O device}
+	\end{itemize}
+
+\item[\textbf{1.13}] \emph{En un entorno de multiprogramaci\'on y tiempo
+compartido, varios usuarios comparten el sistema simult\'aneamente.Esta
+situaci\'on puede resultar en varios problemas de seguridad}\\
+	\begin{itemize}
+		\item ?`Cu\'ales son los dos problemas?\\
+R:\\
+ El robo o copiado de la informaci\'on o programas de un usuario y el usar los recursos del sistema (CPU, memory,disk space, peripherals) sin un sistema de cuentas apropiados.
+ Por ello, es necesario que exista mecanismos de seguridad, para evitar la
+espera permanente de un proceso, y se debe proveer de mecanismos para la
+sincronizaci\'on de procesos a si como su debido sistema de permisos. 
+
+		\item ?`Podemos asegurar el mismo grado de seguridad en una m\'aquina de tiempo compartido, como en una m\'aquina dedicada? Explicar la respuesta\\
+R:\\
+ Los sistemas dedicados, poseen un grado mayor de seguridad, ya que es limitado para los usuarios.
+	\end{itemize}
+
+\item[\textbf{1.17}] \emph{Describa las diferencias entre el multiprocesamiento sim\'etrico y asim\'etrico. ?`Cu\'ales son las 3 ventajas y 1 desventaja del sistemas multiprocesos?}\\
+R:\\
+	En el multiprocesamiento simetrico no existe relaci\'on entre los procesadores, todos van a la par. En cambio, en el asimetrico, la relaci\'on entre los procesadores es del tipo maestro-esclavo.\\
+	Por otro lado, en el simetrico se deben manetener mecanismos de seguridad que administren el procesamiento de los jobs (que no se elija el mismo, que no se extravi\'en, sincronizar los recursos entre ambos procesadores).\\
+	 En el asimetrico, si falla el procesador maestro, falla todo el sistema.\\\\
+	\begin{itemize}
+	\item Ventajas Multiprocesamiento:
+	\begin{enumerate}
+		\item Incrementa rendimiento, eficiencia, mayores procesos corriendo simultaneamente.
+		\item Economia de Escala.
+		\item Toleracia a fallas
+	\end{enumerate}
+	\item Desventaja:
+	\begin{enumerate}
+		\item Mas complejo.
+	\end{enumerate}
+	\end{itemize}
+
+\item[\textbf{1.22}] \emph{?`Cu\'al es el prop\'osito de las
+interrupciones??`Cu\'ales son las diferencias entre una ``trap'' y una
+``interrupci\'on''??`Pueden las ``traps'' ser generadas intencionalmente por
+un programa de usuario?Si es asi, ?`Para qu\'e proposito?}\\
+R:\\
+		Las iterrupciones son los mensajes que los dispositivos envian al SO para adquirir el control de la CPU.\\
+		Las trap o excepci\'on son interrupciones generadas a nivel de software cuando sucede algun tipo de error (ej: division por 0, loop infinito, procesos modificandose entre si o al SO), para terminar intencionalmente la ejecuci\'on de un proceso.\\
+
+\item[\textbf{1.23}] \emph{DMA es usado por dispositivos I/O de alta velocidad
+para evitar el aumento de la carga de la ejecuci\'on de la CPU}\\
+	\begin{itemize}
+		\item ?`C\'omo funciona la interfaz de CPU con el dispositivo para coordinar la transferencia?\\
+R:\\
+			A traves de dos posibles metodos:
+			\begin{enumerate}
+				\item Metodo simple: Rutina gen\'erica invoca a la espec\'ifica (muy lento).
+				\item Tener una tabla en la cual se almacena una lista de punteros a las rutinas de interruci\'on (se llama a la rutina de interrupci\'on de forma indirecta a trav\'es de la tabla). Dicha matriz se indexa con un n\'umero de dispositivo unico. (Windows y UNIX)
+			\end{enumerate}
+		\item ?`C\'omo sabe la CPU cuando las operaciones de  memoria se completan?\\
+R:
+			Porque los dispositivos envian una interrupci\'on avisando que se completo la trasmici\'on.
+
+		\item La CPU esta permitida de ejecutar otros programas mientras que el controlador DMA esta tranferiendo datos.?`Puede \'este proceso interferir con la execuci\'on de los programas de usuario? Si es as\'i, describir que formas de interferencia son causados.
+R:\\
+			No interfiere, ya que la transferencia de datos no utiliza cpu, ni ciclos de m\'aquina.% Pero aun asi, el proceso puede interferir si intenta modificar algun dato que este siendo transferido. Esto se evita bloqueando las zonas que esten siendo utilizadas.
+	\end{itemize}
+
+\item[\textbf{1.24}] \emph{Algunos sistemas computacionales no proveen un modo
+de operaci\'on privilegiado en hardware.?`Es posible contruir un SO seguro
+para estos sistemas computacionales?} Dar argumentos en caso que sea posible o
+no\\
+R:\\
+No es posible construir un SO seguro para este sistema inform\'atico, ya que se requiere protecci\'on para ciertos accesos a hardware por parte del usuario.
+
+\item[\textbf{1.30}] \emph{Definir las propiedades escenciales de los
+siguientes tipos de SO}\\
+R:
+	\begin{itemize}
+		\item Batch
+		\begin{enumerate}
+			\item Ejecuci\'on de procesos sin interacci\'on con humanos.
+			\item Toda la informacion de entrada esta definida en scripts o en parametros de una linea de comandos.
+			\item Rapido y eficiente gracias a que no esta constantemente interactuando con el usuario.
+		\end{enumerate}	
+		\item Interactive
+		\item Time sharing	
+		\begin{enumerate}
+			\item	Tambien llamada multi-tarea, es una extensi\'on logica en la cual la CPU cambia entre jobs frecuentemente de tal forma que los usuarios puedan interactuar con cada job mientras este corre.
+			\item A lo anterior se le llama computaci\'on interactiva.
+			\item Tiempo de respuesta: menor a 1 segundo.
+			\item Procesos: Cada usuario tiene al menos un programa ejecutandose en memoria.
+			\item CPU Scheduling.
+			\item Swapping de procesos si estos no caben enteros en la memoria.
+			\item Uso de memoria virtual para la ejecucion de procesos que no estan completamente en la memoria.
+		\end{enumerate}
+		\item Real time
+		\begin{enumerate}
+			\item Sistema operativo multi-tarea dirigido a aplicaciones de tiempo real. 
+			\item Latencia m\'inimal de las interrupciones y del cambio de threads.
+			\item Priority scheduling: Cambia de tarea solo cuando surge un evento de mayor prioridad.
+			\item Time-sharing: Basicamente, usa round robin. 
+		\end{enumerate}
+		\item Network
+		\begin{enumerate}
+			\item Controla la red, sus traficos de mensajes y sus colas de acceso. Administra los recursos de la red y provee seguridad a la misma. 
+			\item Soporte basico de puertos de hardware
+			\item Seguridad: Restricciones de autentificacion, autorizacion y login (controles de acceso).
+			\item Servicios de nombre y de directorios. 
+			\item De acceso remoto, y administracion a traves de la red.
+			\item Tolerante a los fallos y posee una alta disponibilidad. 
+		\end{enumerate}
+		\item Parallel
+		\begin{enumerate}
+			\item De arquitectura mas compleja que los de programacion secuencial.
+			\item Debe introducir controles para evitar problemas o bugs gracias al uso concurrente de los recursos.. 
+			\item Mas vel\'oz, y su velocidad es regida por la ley de Amdahl's 
+			\item La mayor barrera para tener un buen rendimiento es la obtencion de un buen sistema de comunicaci\'on y sincronizaci\'on de las diferentes sub-procesos. 
+		\end{enumerate}
+		\item Distributed
+		\begin{enumerate}
+			\item Un tipo de computaci\'on paralela. 
+			\item Distribuye la memoria del sistema conectando los elementos de procesamientos a traves de una red.
+			\item Gran escalabilidad.
+			\item Parecido al Network SO, solo que la plataforma en la cual corre debe poseer una gran configuraci\'on y mas capacidad de RAM, altas velocidades del Procesador.
+		\end{enumerate}
+		\item Clustered
+		\begin{enumerate}
+			\item Ejecuci\'on Remota Trasparente:\\ Las aplicaciones deben ser ignorar el hecho de que un proceso puede estar corriendo en un nodo propio o remoto 
+			\item Balance de Carga: \\ Debe implementar un inteligente mecanismo de colocaci\'on de procesos.
+ 			\item Compatibilidad Binaria:\\ Debe proveer una ejecuci\'on remota trasparente, balanceo de carga y otras caracter\'isticas, sin requerir modificar aplicaciones ni volver a generar enlaces.
+ 			\item Alta disponibilidad:\\ Si un nodo falla, el sistema puede continuar operando.
+ 			\item Portable:\\ Tiene que poder serlo!
+		\end{enumerate}
+		\item Handheld
+		\begin{enumerate}
+			\item Como Palm OS, Android y relativos.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}

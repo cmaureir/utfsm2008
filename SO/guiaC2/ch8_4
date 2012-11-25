@@ -1,0 +1,11 @@
+8.18 Consider a logical address space of 32 pages with 1024 words per page;
+mapped onto a physical memory of 16 frames.
+a. How many bits are required in the logical address?
+b. How many bits are required in the physical address?
+
+Answer:
+a. 2^5  + 2^10  = 15 bits.
+
+b. 2^4  + 2^10  = 14 bits.
+
+8.19 

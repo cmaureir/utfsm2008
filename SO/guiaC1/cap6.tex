@@ -1,0 +1,84 @@
+\begin{itemize}
+\item[\textbf{6.8}]\emph{Condiciones de carrera son posibles (Race conditions) en muchos sistemas de computadoras. Considere la posibilidad de un sistema bancario con dos funciones: deposit(amount) y draw(amount) (depositar y retirar cantidad). Estas dos funciones se pasan la cantidad que se deposit\'o o retir\'o de una cuenta bancaria. Supongamos una cuenta bancaria compartida existe entre un marido y la mujer y simultaneamente el marido llama a draw() y la esposa llama a deposit(). Describre como una condicion de carrera es posible y lo que se podria hacer para evitar que se produzca la condicion de carrera.}\\
+\textcolor{red}{R:}
+
+\item[\textbf{6.11}]\emph {?`Cu\'al es el significado del termino busy waiting?}
+R:\\
+Ocurre cuando los loops continuos de la CPU, no hacen nada util, pero esperan que cualquier evento ocurra. Puede ser usado en la entrada de una seccion critica.\\
+\emph{?`Qu\'e otros tipos de espera hay en un sistema operativo.}
+R:\\
+Un proceso/hebra puede tambien ser bloqueado-esperando en una cola asociada con dispositivos I/O, semaforos, lock, o una condicion variable..
+R:\\
+\item[\textbf{6.13}]\emph {Explique por que la implementacion de las primitivas de sincronizacion por deshabilitacion de interrupciones no es apropiado en un sistema con unico procesador si las primitivas de sincronizacionvan a ser utilizados en programas a nivel de usuario.}\\
+R:\\
+Si un programa de nivel de usuario esta dando la habilidad para desabilitar interrupciones,  entonces puede desabilitar el timer de interrupciones y prevenir el cambio de contexto, de tomar un lugar, esto dejando usar el proceso, sin dejar que otros procesos se ejecuten.\\
+\item[\textbf{6.15}]\emph {Describir 2 estructuras de datos del kernel, en la cual las condiciones de carrera (race conditions) son posibles. Incluir una descripcion de como una condicion de carrera puede ocurrir.}\\
+\textcolor{red}{R:}
+
+\item[\textbf{6.20}]\emph {Mostrar como implementar las operaciones wait() y signal() de un semaforo en un entorno multiprocesador usando TestAndSet(). La solucuon deberia reflejar un minimo busy waiting}\\
+R:\\
+
+int guard = 0;
+int semaphore value = 0;
+wait(){
+	 while (TestAndSet(\&guard) == 1);
+	if (semaphore value == 0){
+		atomically add process to a queue of processes
+		waiting for the semaphore and set guard to 0;
+		} 
+	else{
+		semaphore value--;
+		guard = 0;
+	}
+}
+signal(){
+	while (TestAndSet(\&guard) == 1);
+	if (semaphore value == 0 \&\& there is a process on the wait queue)
+		wake up the first process in the queue
+		of waiting processes
+	else
+		semaphore value++;
+		guard = 0;
+	}
+
+
+\item[\textbf{6.23}]\emph {Escribir un monitor de buffer delimitado (bounded-buffer) en el cual los buffers (porciones) son embebidos dentro del mismo monitor.}\\
+R:\\
+monitor bb{
+	char buffer[BUFFER\_SIZE];\\
+	int in, out, count;\\
+	condition not\_full, not\_empty;\\
+	void produce(char x){\\
+		if(count==BUFFER\_SIZE){\\
+			not\_full.wait();\\
+		}\\
+		buffer[in]=x;\\
+		in=(in+1)%BUFFER_SIZE;\\
+		count++;\\
+		not\_empty.signal();\\
+		}	
+	void consume(char x){\\
+		if(count==0){\\
+			not\_empty.wait();\\
+			}\\
+		x=buffer[out];\\
+		out=(out+1)%BUFFER_SIZE;\\
+		count--;\\
+		not\_full.signal();\\
+	}
+}
+void init() 
+
+\item[\textbf{6.32}]\emph {Escribir un monitor que implemente un reloj alarma, que active una llamada a un programa para retrasarse el mismo para un numero de unidades de tiempo especidico (ticks). Puedes asumir la existencia de un reloj real por hardware en donde se invoque un procedimiento tick en tu monitor en intervalos regulares.}\\
+R:\\
+Answer: type alarm = monitor var X: condition;\\
+procedure delay (T: integer); begin\\
+X.wait (T);\\
+X.signal;\\
+end\\
+procedure tick; begin\\
+X.signal\\
+end
+
+\end{itemize}
+

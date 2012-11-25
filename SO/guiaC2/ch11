@@ -1,0 +1,34 @@
+11.9 Consider a file system that uses a modifed contiguous-allocation scheme
+with support for extents. A file is a collection of extents, with each ex-
+tent corresponding to a contiguous set of blocks. A key issue in such
+systems is the degree of variability in the size of the extents. What are
+the advantages and disadvantages of the following schemes:
+    a. All extents are of the same size, and the size is predetermined.
+   b. Extents can be of any size and are allocated dynamically.
+    c. Extents can be of a few fixed sizes, and these sizes are predeter-
+       mined.
+Answer: If all extents are of the same size, and the size is predeter-
+mined, then it simplifies the block allocation scheme. A simple bit map
+or free list for extents would suffice. If the extents can be of any size and
+are allocated dynamically, then more complex allocation schemes are
+required. It might be difficult to find an extent of the appropriate size
+and there might be external fragmentation. One could use the Buddy
+system allocator discussed in the previous chapters to design an ap-
+propriate allocator. When the extents can be of a few fixed sizes, and
+these sizes are predetermined, one would have to maintain a separate
+bitmap or free list for each possible size. This scheme is of intermediate
+complexity and of intermediate flexibility in comparison to the earlier
+schemes.
+
+-------------------
+
+11.15 Consider a file system that uses inodes to represent files. Disk blocks
+are 8 KB in size, and a pointer to a disk block requires 4 bytes. This file
+system has 12 direct disk blocks, as well as single, double, and triple
+indirect disk blocks. What is the maximum size of a file that ca be
+stored in this file system?
+
+NO LA ENCUENTRO!!!!
+
+
+--------------------

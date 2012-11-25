@@ -1,0 +1,90 @@
+\begin{itemize}
+\item[\textbf{4.1}]\emph{ Provea dos ejemplos de programaci\'on en donde multi-hebras provee un mejor rendimiento que una solucion de una hebra}\\
+R:
+	\begin{enumerate}	
+		\item Un servidor Web que procese cada petici\'on en threads separados.
+		\item Un programa GUI interactivo, por ejemplo, un debugger, donde un thread es usado para monitorear inputs, otro thread representa las aplicaciones corriendo y un tercer thread monitorea el rendimiento.
+	\end{enumerate}
+\item[\textbf{4.3}]\emph{ Describa las acciones realizadas por el kernel en un context-switch entre hebras a nivel del kernel }\\
+R:\\
+El context-switching entre threads del kernel requiere generalmente guardar los valores de los registros de la CPU desde el thread que esta siendo 'switcheado' y recuperando los registros del CPU del nuevo thread que viene en el schedule.
+\item[\textbf{4.7}]\emph{ Provea dos ejemplos de programaci\'on en el cual multi-hebras no proveen un mejor rendimiento que una solucion de una hebra}\\
+R:
+	\begin{enumerate}
+		\item Ejemplo 1:\\\\
+string filenames[100];\\
+/* Se crean threads del 1 al 100 */\\
+create\_threads();\\
+/* Cada thread crea un archivo en particular, cuyo nombre se pasa al programa ejecutado por el thread */\\
+\\while (1)\{ \\
+not\_created = FALSE;\\
+for i = 0 .. 99 \{ \\
+if (not(exists(filename[i])) \{ not\_created = TRUE; \} \\
+\} \\
+if (not\_created == FALSE)\{ \\
+printf("Done!");\\
+return;\\
+\} \\
+\} \\ \\
+
+Este es el seudoc\'odigo de un programa multihebra que no desempe~na mejor rendimiento que un programa de una hebra para solucionar el mismo problema.\\
+		\item Ejemplo 2:\\ \\
+			Si el tiempo de computaci\'on de los procesos no difiere significativamente, un programa multihebra no es m\'as \'util en comparaci\'on a una soluci\'on de una hebra.\\
+	\end{enumerate}
+\item[\textbf{4.8}]\emph{ Describa las acciones realizadas por una biblioteca de hebras en un context-switch entre hebras a nivel de usuario }\\
+R:\\
+Para realizar el context-switch entre hebras a nivel de usuario la biblioteca de threads guarda el contexto del anterior thread en su TCB (Thread Control Block) y carga el contexto del nuevo thread. El TCB contiene un stack de punteros, un Program Counter, valores de los registros y el estado actual del thread.\\
+\item[\textbf{4.10}]\emph{ Cuales de los siguientes componenes del estado del programa son compartidos por las hebras en un procesamiento multi-hebra}
+	\begin{enumerate}
+		\item Valores de Registro
+		\item Memoria Heap
+		\item Variables Globales
+		\item Memoria de Stack
+	\end{enumerate}
+	R:
+	 \begin{itemize}
+		\item Heap memory
+		\item Global variables
+	 \end{itemize}
+\item[\textbf{4.11}]\emph{ ?`Puede una soluci\'on multi-hebra usando multiples hebras de niveles de usuario obtener un mejor rendimiento en un sistema con multiprocesador que dentro de uno de 1 solo procesador? Explique.}\\
+R:\\
+No hay mejor rendimiento, pues el sistema operativo v\'e solo un proceso individual y no va a gestionar los diferentes threads del proceso en procesadores diferentes.\\
+\item[\textbf{4.13}]\emph{ El programa muestro a continuaci\'on usa la API Pthreads. ?`Que es lo seria el output del programa en la linea C y linea P?}
+	\begin{itemize}
+	\item Figura 4.14: Programa en C para el Ejercicio 4.13\\
+\#include <stdio.h>\\
+\#include <pthread.h>\\
+\\
+int value = 0;\\
+void *runner(void *param); /* the thread */\\
+\\
+int main(int argc, char *argv[])\\
+\{\\
+	int pid;\\
+	pthread\_t tid;\\
+	pthread\_attr\_t attr;\\
+	\\
+	pid = fork();\\
+	\\
+	if (pid == 0) \{ /* child process */\\
+		pthread\_ttr\_init(\&attr);\\
+		pthread\_create(\&tid,\&attr,runner,NULL);\\
+		pthread\_join(tid,NULL);\\
+		fprintf(``CHILD: valuea = \%d'',value); /* LINE C */\\
+	\}\\
+	else if (pid > 0) \{ /* parent process */\\
+		wait(NULL);\\
+		fprintf(``PARENT: valuea = \%d'',value); /* LINE P */\\
+	\}\\
+	\\
+	void *runner(void *param) \{\\
+		value = 5;\\
+		pthread\_exit(0);\\
+	\}\\
+\}
+	\end{itemize}
+R:\\
+Linea C, 5.\\
+Linea P, 0.\\
+
+\end{itemize}

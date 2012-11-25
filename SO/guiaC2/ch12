@@ -1,0 +1,106 @@
+12.2 Explain why SSTF scheduling tends to favor the middle cylinders of a disk over the innermost and outermost cylinders.
+
+Answer:
+The SSTF algorithm is biased toward the middle cylinders in much the same way the SCAN algorithm is. Since, in the SSTF algorithm, the closest cylinder is always chosen, then all middle cylinder references will serviced on the way to the end of the disk.
+
+I present the book's answer to this question, even though I think it is more muddled... just FYI:
+The center of the disk is the location having the smallest average distance to all other tracks. Thus the disk head tends to move away from the edges of the disk.
+
+Here is another way to think of it. The current location of the head divides the cylinders into two groups. If the head is not in the center of the disk and a new request arrives, the new request is more likely to be in the group that includes the center of the disk; thus, the head is more likely to move in that direction.
+
+----------------------------------
+
+12.15 None of the disk-scheduling disciplines, except FCFS, is truly fair
+(starvation may occur).
+a. Explain why this assertion is true.
+b. Describe a way to modify algorithms such as SCAN to ensure fairness.
+c. Explain why fairness is an important goal in a time-sharing system.
+d. Give three or more examples of circumstances in which it is important that the operating system be
+unfair in serving I/O requests.
+(a) New requests for the track over which the head currently resides can theoretically arrive as quickly as
+these requests are being serviced.
+(b) All requests older than some predetermined age could be forced to the top of the queue, and an
+associated bit for each could be set to indicate that no new request could be moved ahead of these requests.
+For SSTF, the rest of the queue would have to be reorganized with respect to the last of these old requests.
+(c) To prevent unusually long response times.
+(d) Paging and swapping should take priority over user requests. It may be desirable for other kernelinitiated
+I/O, such as the writing of ¯le system metadata, to take precedence over user I/O. If the kernel
+supports real-time process priorities, the I/O requests of those processes should be favored.
+
+------------------------------------
+12.16 Suppose that a disk drive has 5000 cylinders, numbered 0 to 4999.
+The drive is currently serving a request at cylinder 143, and the previous request was at cylinder 125. The
+queue of pending requests, in FIFO order, is
+86, 1470, 913, 1774, 948, 1509, 1022, 1750, 130
+Starting from the current head position, what is the total distance (in cylinders) that the disk arm moves
+to satisfy all the pending requests, for each of the following disk scheduling algorithms? a. FCFS b. SSTF
+c. SCAN d. LOOK e. C-SCAN.
+a. The FCFS schedule is 143, 86, 1470, 913, 1774, 948, 1509, 1022, 1750, 130. The total seek distance is
+7081.
+b. The SSTF schedule is 143, 130, 86, 913, 948, 1022, 1470, 1509, 1750, 1774. The total seek distance is
+1745.
+c. The SCAN schedule is 143, 913, 948, 1022, 1470, 1509, 1750, 1774, 4999, 130, 86. The total seek distance
+is 9769.
+d. The LOOK schedule is 143, 913, 948, 1022, 1470, 1509, 1750, 1774, 130, 86. The total seek distance is
+3319.
+e. The C-SCAN schedule is 143, 913, 948, 1022, 1470, 1509, 1750, 1774, 4999, 86, 130. The total seek
+distance is 9813.
+f. (Bonus) The C-LOOK schedule is 143, 913, 948, 1022, 1470, 1509, 1750, 1774, 86, 130. The total seek
+distance is 3363.
+
+---------------------------------------
+
+12.17 muy larga...
+
+
+NO LA ENCUENTRO
+
+
+---------------------------------------
+
+12.18 se toma en cuenta el 12.17...
+
+Suppose that the disk in Exercise 12.17 rotates at 7200 RPM. 
+	a. What is the average rotational latency of this disk drive? 
+	b. What seek distance can be covered in the time that you found 
+	   for part a? 
+
+Answer: 
+
+	a. 7200 rpm gives 120 rotations per second. Thus, a full rotation 
+	   takes 8.33 ms, and the average rotational latency (a half rotation) 
+	   takes 4.167 ms. 
+
+	b. Solving t =0.7561 + 0.2439 pL for t =4.167 gives L = 195.58,
+	   so we can seek over 195 tracks (about 4% of the disk) during 
+	   an average rotational latency.
+
+
+---------------------------------------
+
+12.19 The accelerating seek described in Exercise 12.17 is typical of hard-disk
+drives. By contrast, floppy disks (and many hard disks manufactured
+before the mid-1980s) typically seek at a fixed rate. Suppose that the
+disk in Exercise 12.3 has a constant-rate seek rather than a constantacceleration
+seek, so the seek time is of the form t = x + yL, where t
+is the time in milliseconds and L is the seek distance. Suppose that the
+time to seek to an adjacent cylinder is 1 millisecond, as before, and is
+0.5 milliseconds for each additional cylinder.
+a. Write an equation for this seek time as a function of the seek
+distance.
+b. Using the seek-time function from part a, calculate the total seek
+time for each of the schedules in Exercise 12.2. Is your answer
+the same as it was for Exercise 12.3(c)?
+c. What is the percentage speedup of the fastest schedule over FCFS
+in this case?
+Answer:
+a. t = 0.95 + 0.05L
+b. FCFS 362.60; SSTF 95.80; SCAN 497.95; LOOK 174.50; C-SCAN 500.15;
+(and C-LOOK 176.70). SSTF is still the winner, and LOOK is the
+runner-up.
+c. (362.60 − 95.80)/362.60 = 0.74 The percentage speedup of SSTF
+over FCFS is 74%, with respect to the seek time. If we include the
+overhead of rotational latency and data transfer, the percentage
+speedup will be less.
+
+

@@ -1,0 +1,17 @@
+8.2 Consider a system in which a program can be separated into two parts:
+code and data. The CPU knows whether it wants an instruction (in-
+struction fetch) or data (data fetch or store). Therefore, two base–limit
+register pairs are provided: one for instructions and one for data. The
+instruction base–limit register pair is automatically read-only, so pro-
+grams can be shared among different users. Discuss the advantages and
+disadvantages of this scheme.
+
+Answer: The major advantage of this scheme is that it is an effective
+mechanism for code and data sharing. For example, only one copy of an
+editor or a compiler needs to be kept in memory, and this code can be
+shared by all processes needing access to the editor or compiler code.
+Another advantage is protection of code against erroneous modification.
+The only disadvantage is that the code and data must be separated,
+which is usually adhered to in a compiler-generated code.
+
+

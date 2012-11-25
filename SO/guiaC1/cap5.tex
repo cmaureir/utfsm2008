@@ -1,0 +1,132 @@
+\begin{itemize}
+\item[\textbf{5.2}]\emph{Explicar la diferencia entre scheduling interrumpible y no interrumpible}
+
+El scheduling no interrumpible ocurre cuando un proceso esta sienco ejecutado por la CPU por cierto intervalo de tiempo, la CPU no puede tomar otro proceso y dejar a medias la ejecuci\'on. En cambio el scheduling interrumpible puede si puede tomar otro.
+
+\item[\textbf{5.3}]\emph{Suponer que los siguientes procesos arriban para ejecucion en los tiempos indicados. Cada proceso correra el tiempo indicado. Responder usando scheduler no interrumpible.}
+
+\begin{tabular}{| c | c | c |}
+\hline
+Proceso & Tiempo de llegada & Burst Time\\\hline
+$P_1$ & 0.0 & 8\\
+$P_2$ & 0.4 & 4\\
+$P_3$ & 1.0 & 1\\\hline
+\end{tabular}
+
+\item[a] Cual es el tiempo de ejecucion promedio con el algoritmo FCFS
+
+P1 - P2 - P3\\
+
+$(8 + (7.6 + 4) + (11 + 1))/3 = 10.53$
+
+\item[b] Cual es el tiempo de ejecucion promedio con el algoritmo SJF
+
+P3 - P2 - P1\\
+
+$((1+1) + (1.6 + 4) + (6 + 8))/3 = 7.2$
+
+\item[c] El algoritmo SJF se supone para mejorar el rendimiento, pero aviso de que hemos elegido elegido  P1 a en tiempo 0 porque no sabiamos que el proceso mas corto llegaria pronto. Calcular el tiempo promedio si la CPU se deja inactiva durante 1 tiempo, para luego usar SJF. Recuerde que los procesos P1 y P2 estan a la espera durante el tiempo de inactividad, por lo que su tiempo de espera puede aumentar.
+
+Si se deja inactiva la CPU, todos los procesos estan listos al comenzar a procesar, por lo que el orden es el mismo:
+
+P3 - P2 - P1\\
+
+$((1+1) + (0.6 + 1 + 4) + (6 + 8))/ 3 = 7.2$
+
+\item[\textbf{5.4}]\emph{Que ventaja se tiene con diferentes tama~nos de quantum de tiempo en diferentes niveles de un sistema de multinivel de colas}
+
+Si se tuviera quantum de tiempos muy largos, ser\'ia parecido a una cola FCFS, y no se repartir\'ia bien los tiempos entre los procesos. Por el contrario con quantum de tiempos cortos, se produce muchos cambios de contexto, con la perdida de eficiencia, ya que el CPU se encarga de repartir los tiempos entre los procesos en vez de procesarlos. Con diferentes quantum de tiempos se garantiza la ejecuci\'on uniforme segun el tiempo de ejecuci\'on de cada proceso.
+
+\item[\textbf{5.5}]\emph{Muchos algoritmos de CPU-scheduling son parametrizados. Por ejemplo Round Robin requiere un parametro para indicar el time slice (tiempo de corte). Multinivel Feedback Queues requieren parametros para definir el numero de colas, el algoritmo de scheduling para cada cola, el criterio usado para mover procesos entre colas, etc.\\
+Estos algoritmos son, por lo tanto realmente conjuntos de algoritmos (por ejemplo, el conjunto de algoritmos de RR para todas los tiempos de corte, y asi sucesivamente). Un conjunto de algoritmos pueden incluir otro (por ejemplo, el FCFS es un Round Robin con tiempo de cuantum infinito). Cual relacion hay entre los siguientes pares de conjuntos de algoritmos}
+
+\item[a] Prioridad y SJF
+
+Tienen relacion debido a que SJF asigna prioridades prediciendo el tiempo de ejecicion.
+
+\item[b] Colas feedback multinivel y FCFS
+
+En las primera colas del multinivel, los quantum de tiempo son peque~nos, luego van aumentando hasta que en la ultima cola, hasta que la ultima cola se convierte en un FCFS, debido a que el quantum de tiempo es igual al tiempo de proceso.
+
+\item[c] Prioridad y FCFS
+
+Son algoritmos diferentes, debido a que el algoritmo de prioridad asigna un entero para la prioridad, dependiendo si ocupa CPU o E/S, pero FCFS asigna prioridades por orden de llegada.
+ 
+\item[d] RR y SJF
+
+Tienen relacion ya que en el Round Robin, en las primeras colas, completa los procesos con menores tiempos de ejecucion, lo que es similar al SJF donde se da prioridad a los procesos mas cortos.
+
+\item[\textbf{5.10}]\emph{Discutir como los siguientes pares de criterios de scheduling entran en conflicto en ciertas configuraciones.}
+
+\item[a] Utilizacion de CPU y tiempo de respuesta
+
+Puede suceder que si se tiene un Round Robin, en donde los quantum de tiempos son peque~nos, se logre tener siempre la CPU al tope trabajando, pero teniendo entre sus operandos latencias que sumadas, generen un tiempo considerable a la hora de calcular el tiempo de respuesta promedio de los procesos.
+
+\item[b] Tiempo promedio de ejecucion y maximo tiempo de espera promedio.
+
+Aca no supe, por que si se tiene un tiempo de ejecucion alto, tambien su espera es alta, van de la mano, no se me ocurrio un ejemplo que se contradiga esto, habria que verlo experimentalmente o llevar la duda a otro lado.
+
+\item[c] Utilizacion de dispositivos de E/S y utilizacion de CPU
+
+Se supone que los CPU I/O  Burst son el tiempo en donde la cpu ejecuta procesos pero los dispositivos de E/S esperan, podria suceder que se requiera tanto sacarle el maximo provecho a la CPU, como al dispositivo de E/S, como en un juego que exija harto recurso, si se desea algo eficiente, tendria que darsele harta prioridad tanto a los dispositivos E/S como al procesamiento de los datos y no en forma extrema para cada lado.
+
+\item[\textbf{5.12}]\emph{Considerar el siguiente gurpo de procesos. con el largo de tiempo de CPU burst en milisegundos}
+
+\begin{tabular}{| c | c | c |}
+\hline
+Proceso & Burst Time & Prioridad\\\hline
+$P_1$ & 10 & 3 \\
+$P_2$ & 1 & 1\\
+$P_3$ & 2 & 3\\
+$P_4$ & 1 & 4\\
+$P_5$ & 5 & 2\\\hline
+\end{tabular}
+
+Se asume que los procesos arriban en el orden $P_1 \cdots P_5$ en el tiempo 0\\
+
+\item[a] Dibujar 4 cartas Gantt que ilustren la ejecucion de esos procesos usando los algoritmos: FCFS, SJF, prioridad no interrumpible ( un peque~no numero implica alta prioridad), y RR (quantum = 1).
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+FCFS	& P1 & P2 & P3 & P4 & P5\\
+	& 0 & 10 & 11 & 13 & 14\\\hline
+SJF	& P2 & P4 & P3 & P5 & P1\\
+	& 0 & 1 & 2 & 4 & 9\\\hline
+Prioridad NI & P2 & P5 & P3 & P1 & P4\\
+	& 0 & 1 & 6 & 8  & 18\\\hline
+RR & P1 & P2 & P3 & P4 & P5 & P1 & P3 & P5 & P1 & P5 & P1 & P5 & P1 & P5 & P1 ... P1\\
+   & 0  & 1  & 2  & 3  & 4  & 5  & 6  & 7  & 9  & 10 & 11 & 12 & 13 & 14 & 15\\\hline
+\end{tabular}
+
+\item[b] Cual es el tiempo de ejecucion promedio para cada proceso en cada algoritmo del punto a\\
+
+EL procedimiento es el mismo al 5.2\\
+
+\item[c] Cual es el tiempo de espera de cada proceso en cada algoritmo del punto a.\\
+
+FCFS: $(0+10+11+13+14)/5 = 9.6$\\
+SJF: $(0+1+2+4+9)/5 = 3.2$\\
+Prioridad NI: $(0+1+6+8+18)/5 = 6.6$\\
+RR: $(t_{p1} + ... t_{p5})/5 = (15 + 1 + 6 + 3 + 14)/5 = 7.8$\\
+
+\item[d] Cual es el agoritmo que da como resultado el minimo tiempo de espera de promedio.
+
+SJF\\
+
+\item[\textbf{5.13}]\emph{Cual de los siguientes algoritmos de sheduling podria producir starvation}
+
+\item[a] FCFS
+\item[b] SJF
+\item[c] RR
+\item[d] Prioridad (correcta, ya que los procesos con prioridad menor podrian nunca ejecutarse, anecdota de los 30 a~nos)
+
+\item[\textbf{5.16}]\emph{Considere a un sistema con scheduler de multinivel de colas. Cual estrategia puede usar un usuario para maximizar la cantidad de tiempo del CPU para procesos de usuario}
+
+NO SE ME OCURREEE
+
+\item[\textbf{5.18}]\emph{Explicar las diferencias en cuanto los siguientes algoritmos de scheduling discriminan en favor de procesos cortos}
+
+\item[a] FCFS: De ninguna forma ayuda a los procesos cortos, puede producirse el fenomeno del convoy y dejar a los mas cortillos al final y se demorarian demasiado
+\item[b] RR: Ayuda ya que le da cierto intervalo de tiempo a cada proceso, independiente de su prioridad o tiempo de ejecucion, solo afecta la cantidad de procesos, solo si son muchos procesos y si el quantum de tiempo es peque~no, el proceso peque~no podria esperar harto.
+\item[c] Multinivel de colas feedback: Ayuda mucho ya que limita las ejecuciones de procesos largos en intervalos de tiempo peque~nos, de esta manera no se produce efectos convoy, ademas de derivar los proceso a otras colas con quantum mas alrgos.
+
+\end{itemize}

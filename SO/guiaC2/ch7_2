@@ -1,0 +1,21 @@
+7.4 Consider the traffic deadlock depicted in Figure 7.8.(Autos en trafico rodeando una cuadra, ver ch7_2.pdf de dotlrn)
+a. Show that the four necessary conditions for deadlock indeed hold in this example.
+Each cross of the streets is considered as a resource, each line of cars is considered as a process.
+
+    * Mutual exclution: only one line of cars at a time can use the resource.
+    * Hold and wait: Each line of cars is holding one resource and is waiting for the next resource.
+    * No preemption: the resouce can not be released until the whole line of cars have passed it.
+    * Circular wait: there are 4 lines of cars l1, l2, l3, l4, l1 is waiting for l2, l2 is waiting for l3, l3 is waiting for l4, l4 is waiting for l1.
+
+b. State a simple rule that will avoid deadlocks in this system.
+There are many ways to avoid the deadlocks in this system. one way is break the second condition: a line of cars can't hold a cross and wait, it's that no car of a line can stay in the cross.
+
+-----------------------------
+
+
+
+
+
+
+
+

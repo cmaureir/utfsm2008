@@ -1,0 +1,3 @@
+7.15 Consider a system consisting of 4 resources of the same type that are shared by three processes, each of which needs at most two resources. Show that the system is deadlock-free.
+
+Answer: Suppose the system is deadlocked. This implies that each process is holding one resource and is waiting for one more. Since there are three processes and four resources, one of the processes must be able to obtain two resources. This process requires no more resources and therefore it will return its resources when done. 
