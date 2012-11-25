@@ -1,0 +1,95 @@
+\documentclass[letterpaper,spanish,11pt]{article}
+\usepackage[utf8]{inputenc}    % Agregar y acentos
+\usepackage{babel}               % Soporte multilenguajes
+%\usepackage{avant}               % Tipo de fuente
+%\usepackage{fancyheadings}       %% Topes y pies de p�ina
+%\usepackage[dvips]{graphicx}     % Inclusion de imagenes .eps
+\usepackage{amsmath,amsthm,url}
+%\usepackage{url}                 % Agregar Links soporte de ~
+\usepackage{verbatim}
+%\usepackage{geometry}
+\usepackage{color}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{txfonts}
+%\usepackage{pxfonts}
+%\usepackage{fancybox}
+\usepackage{latexsym}
+%\usepackage{fancyvrb}
+\usepackage{graphicx}
+%\usepackage{pstricks}
+\usepackage{setspace} % paquete para interlineado
+\usepackage{url}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{slashbox}
+\usepackage{rotating}
+\definecolor{rojo}{rgb}{1,0,0}
+\oddsidemargin -0.1in
+\topmargin -0.5in
+\textwidth 6.7in
+\textheight 8.5in
+
+\begin{document}
+\textbf{Guttmans}\\\\\\
+
+\textbf{Asociaci\'on de variables en escala nominal}\\
+	Supongamos que trabajaos con la siguientes variables nominales: el sexo y el hecho de fumar o no.
+	Tenemos una muestra de 98 individuos con la siguiente tabla de contingencia:\\
+	\begin{center}
+     \begin{tabular}{ | c | c | c | c | }
+        \hline
+        $Sexo \diagdown Fumar$ & Si & No & Total \\
+        \hline	
+          Masculino & 30 & 25 & 55 \\
+          Femenino  & 15 & 28 & 43 \\
+          Total     & 45 & 53 & 98 \\
+        \hline
+     \end{tabular}
+	\end{center}
+	Si debieramos adivinar el sexo de un individuo de la muestra diriamos ``Masculino'' (pues es el sexo mayoritario en la muestra, la clase
+	modal de la variable sexo) teniendo la posibilidad de equivocarnos en 43 de los 98 casos. Observemos si la otra variable nos entrega
+	informaci\'on respecto a la variable sexo. Supongamos que sabemos si el individio fuma o no y adivinamos suy sexo.
+	Si fuma diremos que es ``Masculino'' equivoc\'andonos en 15 casos (de los 45 fumadoires) si no fuma diremos que su sexo es ``Femenino'' con un error
+	de 25 casos. Conociendo si fuma o no , el error de adivinar el sexo es ahora (15 + 25) casos , con lo cual hemos podido reducir el error total
+	de 43 a 40 casos.\\\\
+	Podemos definir un coeficiente de asociacion entre ambas variables consistentes en el cuociente de asociacion entre ambas variables
+	consistentes en el cuociente entre la reduccion del error y el error total primitivo.\\\\
+	La variable fumar en este ejemplo hace el rol de \textbf{variable\ predictora} y la variable ``sexo'' el rol de \textbf{variable\ dependiente}.\\\\
+	Llamaremos \textbf{coeficiente\ de\ preficcion\ de\ Guttmans} a:
+	$$\lambda\ =\ \frac{reduccion\ en\ el\ error}{error\ original\ total}$$
+	ejemplo:\\
+	$$\lambda\ =\ \frac{43-40}{43}\ =\ \frac{3}{43}$$
+	OBS.:
+	\begin{enumerate}
+		\item \textbf{0\ $<$\ $\lambda$\ $<$\ 1} Si $\lambda$ se acerca a cero, la variable predictora reduce muy poco el error en la variable dependiente y su asociacion entre ambas es peque\~na.
+		\item Si las variables intercambian su rol es probable que la nueva variable predictora provoque una fuerte reduccion en el error de la nueva variable dependiente
+	\end{enumerate}
+	En el ejemplo si intercambiamos el rol de las variables de modo que el ``sexo'' sea variable predictora y ``fumar o no'' sea la variable dependiente se tiene:\\
+	\begin{itemize}
+		\item Error original: 45 casos
+		\item Error conociendo la variable ``sexo''
+		\item Si el sexo es masculino: 25 casos
+		\item Si el sexo es Femenino: 15 casos
+		\item Total: 40 casos
+	\end{itemize}
+	Entonces:\\
+	$$\lambda\ =\ \frac{45-40}{45}\ =\ \frac{5}{45}\ =\ \frac{1}{9}$$
+	Algo mejor que cuando las variables desarrollaban suy rol primitivo\\
+	El coeficiente de predicci\'on de \textbf{Guttmans} se puede generalizar a tablas de contingencia mayores de 2 x 2 a trav\'es de la siguiente f\'ormula:\\
+	$$\lambda\ =\ \frac{\sum{n_{i\ast}\ -\ n_{\ast d}}}{n\ -\ n_{\ast d}}$$
+
+	\begin{itemize}
+		\item \emph{$n_{i \ast}$} frecuencia absoluta maxima dentro de cada subclase de la variable predictora
+		\item \emph{$n_{\ast d}$} frecuencia absoluta maxima dentro de cada subclase de la variable dependiente
+		\item \emph{n} numero de individuos
+	\end{itemize}
+	En el ejemplo (con el rol inicial de las variables)
+	$$\lambda\ =\ \frac{(30+28)-55}{98-55}\ =\ \frac{3}{43}$$
+	OBS.: Para superar el problema de cual es la variable predictoria y cual es la dependiente, usualmente se utiliza
+	el coeficiente de \textbf{Guttmans}haciendo a ambas variables jugar los dos roles.
+	$$\lambda\ =\ \frac{Red\ en\ el\ error\ sist.\ 1\ +\ Red\ en\ el\ sist.\ 2}{error original\ sist. 1\ +\ error\ original\ sist.\ 2}$$
+	En nuestro ejemplo resultar\'ia:\\
+	$$\lambda\ =\ \frac{3+5}{43+45}\ =\ \frac{8}{88}\ =\ \frac{1}{11}$$
+
+\end{document}

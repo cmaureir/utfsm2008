@@ -1,0 +1,79 @@
+\subsubsection{Mantener Regalo}
+\begin{itemize}
+	\item Caso de Uso Expandido\\
+		\begin{tabular}{|c|p{9.5cm}|}\hline
+			Caso de Uso: & Mantener Regalo  \\\hline
+			Actores: & Administrador del Sistema \\\hline
+			Propósito: & Agregar, Modificar y Eliminar Regalos \\\hline
+			Resumen: & El Administrador del Sistema es capaz realizar las mantenciones de la base de datos de los regalos agregando, modificando o eliminandolos.\\\hline
+			Tipo: & Esencial, Primario \\\hline
+			Descripción: & El administrador elige el tipo de mantencion que quiere realizar y dependiendo del caso, seleccionar de una lista los regalos a modificar o eliminar, pudiendo ver los detalles de cada uno antes de confirmar la operaci\'on  \\\hline
+			Referencias Cruzadas: & Modificar Regalo \\\hline
+		\end{tabular}
+
+	\item Curso Normal de Eventos: Ingresar Regalo\\
+		\begin{tabular}{|p{6.6cm}|p{6.6cm}|}\hline
+			\emph{Acción del Actor} & \emph{Respuesta del Sistema}\\\hline
+			1. El Administrador del Sistema entra a Mantener Regalos&\\\hline
+			&2. El Sistema despliega las 4 opciones permitidas(agregar, modificar, eliminar, volver)\\\hline
+			3. El Administrador del Sistema elige agregar Regalo&\\\hline
+			&4. El Sistema consulta los atributos del regalo\\\hline
+			5. El Administrador del Sistema rellena los atributos requeridos&\\\hline
+			&6. El Sistema verifica la integridad de los datos\\\hline
+			7. El Administrador confirma el ingreso&\\\hline
+			&8. El Sistema ingresa el nuevo regalo a la base de datos y avisa de que la agregaci\'on fue realizada con \'exito\\\hline
+			&9. El Sistema regresa al punto 2. \\\hline
+		\end{tabular}
+
+	\item Curso Alternativo de Eventos  \\
+		\begin{tabular}{|p{6.6cm}|p{6.6cm}|}\hline
+			\emph{Acción del Actor} & \emph{Respuesta del Sistema}\\\hline
+			&8. El Sistema indica que ya existe ese regalo y regresa al punto 2 \\\hline
+			&\\\hline
+			3. El Administrador del Sistema elige eliminar Regalo& \\\hline
+			&4. El Sistema despliega los 10 ultimos regalos agregados y una casilla para buscar regalos\\\hline
+			5. El Administrador selecciona un Regalo de la lista&\\\hline
+			&6. El Sistema le muestra los atributos del Regalo y pregunta si realmente desea elminar este regalo\\\hline
+			7. El Administrador confirma la eliminaci\'on&\\\hline
+			&8. El Sistema elimina de la base de datos al regalo y avisa de que la eliminaci\'on fue realizada con \'exito. Regreso al punto 2\\\hline
+			&\\\hline
+			8. El Regalo fue modificado o eliminado en el proceso por otro Administrador & 9. El sistema notifica que la operacion no pudo ser realizada y tira un error de eliminaci\'on. Regreso al punto 2  \\\hline
+		\end{tabular}
+\end{itemize}
+
+\subsubsection{Editar Regalo}
+\begin{itemize}
+	\item Caso de Uso Expandido\\
+		\begin{tabular}{|c|p{9.5cm}|}\hline
+			Caso de Uso: & Editar Regalo\\\hline
+			Actores: & Administrador del Sistema\\\hline
+			Propósito: & Editar los atributos de cierto regalo\\\hline
+			Resumen: & El Administrador del Sistema es capaz de modificar de forma integra los atributos de un Regalo\\\hline
+			Tipo: & Esencial, Secundario \\\hline
+			Descripción: & El administrador elige el regalo a modificar, para luego elegir uno de sus atributos y modificar uno de ellos. El Sistema verifica los atributos para mantener la integridad de los datos\\\hline
+			Referencias Cruzadas: & Mantener Regalo \\\hline
+		\end{tabular}
+
+	\item Curso Normal de Eventos\\
+		\begin{tabular}{|p{6.6cm}|p{6.6cm}|}\hline
+			\emph{Acción del Actor} & \emph{Respuesta del Sistema}\\\hline
+			& 1. El Sistema despliega un menu para buscar un regalo por alguno de sus atributos\\\hline
+			2. El Administrador selecciona un atributo, ingresa alguna palabra clave para realizar la busqueda, y presiona en buscar&\\\hline
+			& 3. El Sistema despliega una lista de los regalos que coinciden con la palabra clave (manteniendo el menu de busqueda en la pantalla)\\\hline
+			4. El Administrador elige uno de los regalos desplegados&\\\hline
+			& 5. El Sistema despliega el detalle de Regalo con sus atributos en casillas modificables\\\hline
+			6. El Administrador modifica algun atributo y presiona modificar&\\\hline
+			& 7. El Sistema verifica que todos los campos esten bien ingresados y que no existan duplicados del mismo regalo\\\hline
+			& 8. El Sistema realiza la modificaci\'on en la base de datos, y muestra por pantalla que la modificaci\'on fue realizada con exito \\\hline
+			& 9. El Sistema se regresa al Curso Normal de Eventos de Mantener Regalo, paso 2.\\\hline
+		\end{tabular}
+
+	\item Curso Alternativo de Eventos\\
+		\begin{tabular}{|p{6.6cm}|p{6.6cm}|}\hline
+			\emph{Acción del Actor} & \emph{Respuesta del Sistema}\\\hline
+			4. No se encontraron coincidencias & 5. El Sistema avisa de que no existe ningun Regalo que coincida con alguno de esos atributos y vuelve al punto 1. \\\hline
+			8. El sistema detecta que el Regalo ya fue modificado o eliminado por otro administrador& 9. El Sistema tira un error de edici\'on y notifica que la modificaci\'on no pudo ser realizada porque el Regalo ya no existe.\\\hline
+			& 10. El Sistema se regresa al Curso Normal de Eventos de Mantener Regalo, paso 2.\\\hline
+		\end{tabular}
+
+\end{itemize}

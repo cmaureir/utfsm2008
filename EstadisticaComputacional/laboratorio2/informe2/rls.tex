@@ -1,0 +1,181 @@
+%elija una variable cuantitativa continua, la cual va a ser dependiente en el analisis
+%y otra variable cuantitativa continua, la cual va a ser independiente
+%primera parte: dependiente(y): prioridad, independiente(x): psu
+\begin{enumerate}
+	\item Calcular:\\
+	\textbf{x:} variable independiente (puntajes psu)\\
+	\textbf{y:} variable dependiente (prioridad acad\'emica)
+	\begin{itemize}
+		\item Covarianza:
+			$$cov(x,y)\ =\ \frac{1}{n}\sum_{i=1}^{n}{(x_{i}-\bar{x})\cdot(y_{i}-\bar{y})}\ =\ 21379.98$$
+		\item Coeficiente de correlaci\'on:
+			$$\rho_{xy}\ =\ \frac{cov(x,y)}{\sigma_{x}\sigma_{y}}\ =\ 0.2780022$$
+		\item Coeficiente de la recta de regresi\'on:
+			$$\bar{y}\ =\ a\ +\ b\bar{x}$$
+			$$b\ =\ \frac{cov(x,y)}{var(x)}\ =\ 12.23432$$
+		\item Desviaci\'on t\'ipica generalizada:
+			$$M\ =\ \left[ \begin{array}{lr}
+		            S_{x}^{2}      &  \rho S_{x}S_{y}  \\
+		            \rho S_{x}S_{y} &  S_{y}^{2}  
+		           \end{array}
+			    \right]
+			$$
+			$$|M|^{1/2}\ =\ S_{x}S_{y}\sqrt{1-\rho^{2}}$$
+
+			Como:
+			$$\sigma_{x}\ =\ 41.80359$$
+                       	$$\sigma_{y}\ =\ 1839.693$$
+			$$\rho \ =\ 0.2780022$$
+			$$|M|^{1/2}\ =\ 73874.1771244$$
+			
+		\item Gr\'afico de dispersi\'on con la recta de regresi\'on:
+			\begin{center}
+                        \includegraphics[width=4in]{images/grafico_dispersion1.png}
+			\end{center}
+
+	\end{itemize}
+	\item Calcular:
+	\begin{itemize}
+		\item Media:
+			$$Media_{errores}\ =\ 3.874873e-14$$
+		\item Varianza de los errores:
+			$$Var_{errores}\ =\ 3122900$$
+	\end{itemize}
+	\item Gr\'aficos:
+	\begin{itemize}
+		\item Diagrama de Caja:
+			\begin{center}
+                        \includegraphics[width=4in]{images/boxplot1.png}
+			\end{center}
+		\item Histograma de los errores:
+			\begin{center}
+                        \includegraphics[width=4in]{images/hist1.png}
+			\end{center}
+	\end{itemize}
+	\item Conclusiones:
+		Podemos ver claramente, que no existe ninguna relaci\'on entre el puntaje de la Prueba de Selecci\'on Universitaria y la Prioridad Acad\'emica que poseen los alumnos encuestados.
+		Atribuimos \'esta falta de relaci\'on porque el nivel y la metodolog\'ia de ense\~nanza que existe en los distintos colegios no es la misma, hay establecimientos educacionales
+		que se preocupan de preparar a sus alumnos s\'olo para que tengan un buen rendimiento en la PSU, otros para que tengan un buen rendimiento en la Universidad y algunos pocos
+		para que se desempe\~nen bien en ambos lugares, por lo tanto es muy comun que la mayor\'ia de las personas que entran a la universidad con los mejores puntajes, tienen un
+		rendimiento desfavorable, a pesar que existen las excepciones. Otro punto importante, es que dependiendo de la cantidad de a\~nos que llevan en la Universidad, pueden haber
+		surgido problemas de otro tipo que no sean acad\'emicos que pudiesen influir en un mal desempe\~no al cursar los ramos.
+		Si lo vemos de forma m\'as aplicada podemos darnos cuenta que el coeficiente de correlaci\'on se acerca mucho a $0$ y bien sabemos que si $-1 < \rho < 1$, no existe relaci\'on
+		lineal exacta.
+
+	%comente sobre los resultados obtenidos en las preguntas anteriores
+	\item ?`Es necesario realizar una transformaci\'on a los datos para obtener
+		una relaci\'on lineal?
+
+		Analizando los graficos de dispersi\'on, podemos ver que los datos no presentan una relaci\'on lineal, lo que se se\~nala en el punto anterior. Tampoco es posible encontrar algun tipo de relaci\'on tanto logar\'itmica, estad\'istica o alguna otra, por lo que realizar alg\'un tipo de transformaci\'on para lograr una regresi\'on lineal ser\'ia in\'util.\\
+
+	\item  Calcule y compare $\beta_{0}^{'}$ con  $\beta_{0}^{''}$ y $\beta_{1}^{'}$
+		con  $\beta_{1}^{''}$ \\ \\
+			$\widehat{y} = \beta_0 + \beta_1 x$ \\
+			$\Leftrightarrow \widehat{y} = -2495.00 + 12.23 x$ \\
+			$\Leftrightarrow \widehat{x} = \frac{y}{\beta_1} - \frac{\beta_0}{\beta_1}$ \\
+			$\Leftrightarrow {\beta_1}' = 1/\beta_1 \ \ \ \ {\beta_0}' = -\beta_0/{\beta_1}$ \\
+			$\Leftrightarrow {\beta_1}' = 0.08176615 \ \ \ \ {\beta_0}' = 204.0065$ \\ \\
+
+			$\widehat{x} = {\beta_0}'' + {\beta_1}'' y$ \\
+			$\Leftrightarrow {\beta_0}'' = 645 \ \ \ \ {\beta_1}'' = 0.006317$ \\ \\
+
+			Claramente se observa que tanto ${\beta_1}'$ y ${\beta_1}''$ como ${\beta_0}'$ y ${\beta_0}''$ respectivamente, poseen valores completamente diferente. Esto se produce debido a que estas constantes  ${\beta_1}'$ y ${\beta_0}'$ se modelaron mediante una fracci\'on entre constantes que fueron calculadas mediante la diferencia vertical de las variables con la recta de regresi\'on, por otro lado las constantes ${\beta_1}''$ y ${\beta_0}''$ fueron modeladas segun diferencias horizontales de las variables con respecto a la recta de regresi\'on.\\
+
+	\item Agregando un dato at\'ipico:
+			
+			$\beta_0 = 728.49 \ \ \ \ \beta_1 = 7.65$ \\ \\
+			\begin{center}
+			\includegraphics[width=4in]{images/grafico_dispersion1_dato_atipico.png}
+			\end{center}
+
+			Comentarios: \\ \\
+			Podemos ver claramente que la recta de regresi\'on se ve afectada de manera importante, con la presencia del dato at\'ipico, lo que llev\'o a modificar los coeficientes que la defin\'ian, disminuyendo notoriamente la ya m\'inima predicci\'on que la recta prove\'ia de los datos. \\
+
+	\item Repitiendo los puntos 1, 2, 3, 4 y 5, tomando como variable independiente
+		la otra variable cuantitativa discreta
+%segunda parte: dependiente(y): prioridad, independiente(x): años de estudio%
+		\begin{enumerate}
+			\item Calcular:
+				\begin{itemize}
+				\item Covarianza:
+					$$cov(x,y)\ =\ \frac{1}{n}\sum_{i=1}^{n}{(x_{i}-\bar{x})\cdot(y_{i}-\bar{y})}\ =\ -232.3434$$
+				\item Coeficiente de correlaci\'on:
+					$$\rho_{xy}\ =\ \frac{cov(x,y)}{\sigma_{x}\sigma_{y}}\ =\ -0.07456646$$
+				\item Coeficiente de la recta de regresi\'on:
+					$$b\ =\ \frac{cov(x,y)}{var(x)}\ =\ -80.99296$$
+					$$\bar{y}\ =\ 6123.33\ -\ 80.99\cdot\bar{x}$$
+				\item Desviaci\'on t\'ipica generalizada: 
+					$$M\ =\ \left[ \begin{array}{lr}
+			        	S_{x}^{2}      &  \rho S_{x}S_{y}  \\
+			  		\rho S_{x}S_{y} &  S_{y}^{2}  
+				        \end{array}
+					\right]
+					$$
+					$$|M|^{1/2}\ =\ S_{x}S_{y}\sqrt{1-\rho^{2}}$$
+
+					Como:
+			               	$$\sigma_{x}\ =\ 1839.693$$
+					$$\sigma_{y}\ =\ 1.69372$$
+					$$\rho \ =\ -0.07456646$$
+						$$|M|^{1/2}\ =\ 3230.008$$
+
+
+		%			$$sd(x)=\ 1839.693$$
+				\item Gr\'afico de dispersi\'on con la recta de regresi\'on:\\
+				\begin{enumerate}
+					\item Gr\'afico de dispersi\'on del tiempo de permanencia en la universidad versus la prioridad actual del estudiante:\\
+			  	  \includegraphics[width=4in,height=4in]{images/plot_2-1.png}
+					\item Gr\'afico de dispersi\'on del tiempo de permanencia en la universidad versus la prioridad actual del estudiante, pero agrupando con las medias de las mediciones:\\
+			  	  \includegraphics[width=4in,height=4in]{images/plot_2-3.png}
+				\end{enumerate}
+				\end{itemize}
+			\item Calcular:
+				\begin{itemize}
+				\item Media de los errores obtenidos:
+%				> mean(abs(errores))
+% 				$$ 1492.753 $$
+%				> mean(errores)
+				$$Media(errores)\ =\ 3.648776e-14$$
+				$$Media(errores)\ ~ 0$$
+				\item Varianza de los errores:
+%				> var(errores)
+				$$S^2(errores)\ =\ 3365652$$
+				\end{itemize}
+			\item Gr\'aficos:
+				\begin{itemize}
+				\item Diagrama de Caja:\\
+			  	  \includegraphics[width=4in,height=4in]{images/2_boxplot}
+				\item Histograma de los errores:\\
+			  	  \includegraphics[width=4in,height=4in]{images/2_histogram}
+				\end{itemize}
+			\item Conclusiones:\\
+			%comente sobre los resultados obtenidos en las preguntas anteriores
+			Se puede notar que existe una especie de patron entre las variables, pero se dificulta un poco
+			la visibilidad de esta por la variabilidad en la cantidad de mediciones por cada a\~no de estancia
+			en la universidad (es dificil encontrar para encuestar a muchos de los ultimos a\~nos, por lo que la
+			poca cantidad de mediciones genera distorciones en la curva de correlaci\'on lineal). Aun as\'i,
+			concluimos que, a pesar de que no se ve a simple vista, las variables de la prioridad acad\'emica y la
+			cantidad de a\~nos que uno lleva en la universidad si estan relacionados, y esa relaci\'on toma una
+			forma que se puede explicar linealmente. Esto se ve mucho mas claro al estratificar por a\~no academico,
+			tomando en cuenta solo los promedios de las prioridades de cada uno. Este decrecer de la prioridad puede
+			darse por variados factores, por lo que se deberian realizar mas analisis para ver si esta aparente baja
+			de notas se deba a la desmotivaci\'on academica de los estudiantes o al aumento de la dificultad de ciertos
+			ramos de \'ultimo a\~no.
+			\item ?`Es necesario realizar una transformaci\'on a los datos para obtener
+				una relaci\'on lineal? \\
+				En el punto anterior se~nalamos que no era necesario realizar alguna transformaci\'on a los datos, ya que pudimos establecer una relaci\'on lineal entre ellos.
+		\end{enumerate}
+	\item ?`Qu\'e variable independiente est\'a m\'as relacionada con la variable dependiente?
+		En nuestro caso, la cantidad de a\~nos de estudio tiene una relacion mucho mayor con la prioridad que el puntaje PSU
+		con la variable dependiente, ya que en la mayor\'ia de los casos, la prioridad va disminuyendo a medida que pasan los
+		a\~nos, \'esto tiene mucha relaci\'on con la f\'ormula con la cual se calcula, y tambien porque la dificultad de los
+		ramos va aumentando, entonces el desempe\~no de un alumno de primer a\~no es muy distinto al de un alumno de sexto a\~no
+		que aparte de ``pasar ramos'', posee otras responsabilidades, impartir ayudantias, trabajos, proyectos, etc.
+		Podemos tambi\'en darnos cuenta de cual variable independiente esta mucho mas relacionada con la variable dependiente
+		mirando el \emph{coeficiente de correlaci\'on}, en el caso de la PSU, $\rho \approx 0.27$ y en el caso de los a\~nos
+		que los estudiantes llevan en la universidad $\rho \approx -0.07$, entonces claramente la PSU obtiene un poco mas de relaci\'on
+		esto se debe a que es mucho mas certero decir \emph{a medida que pasan los a\~nos, la prioridad baja porque la cantidad de cr\'editos
+		va disminuyendo, o por la misma f\'ormula que calcula la prioridad}, que decir \emph{si el puntaje en la PSU es mayor, mayor la prioridad}.
+
+\end{enumerate}
+

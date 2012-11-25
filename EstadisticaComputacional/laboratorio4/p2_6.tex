@@ -1,0 +1,32 @@
+Calcular el intervalo de confianza para la varianza del tiempo de duraci\'on del cigarro de tipo light, con
+un 75 \%, 85 \% y 95 \% de confianza.
+
+Teniendo en cuenta que: \\
+
+$P(\frac{\sum(x_i - \overline{x})^2}{\chi_{1-{\frac{\alpha}{2}}}^2} <= \sigma^2 <= \frac{\sum(x_i - \overline{x})^2}{\chi_{\frac{\alpha}{2}}^2}) = 1 - \alpha$\\
+
+$\widehat{s}^2 = \sum \frac{(x_i - \overline{x})^2}{n-1}$\\
+
+$\Leftrightarrow P(\frac{\widehat{s}^2 (n-1)}{\chi_{1-{\frac{\alpha}{2}}}^2} <= \sigma^2 <= \frac{\widehat{s}^2 (n-1)}{\chi_{\frac{\alpha}{2}}^2}) = 1 - \alpha$
+
+$\widehat{s}^2 = 3428.939$\\
+$n - 1 = 49$\\
+$\chi^2$ = distribucion chi-cuadrado con n-1 grados de libertad\\
+
+Por lo que: \\
+
+\begin{itemize}
+
+\item $\alpha = 0.25$
+
+$\sigma^2 \in$ [2770.269 , 4446.106]
+
+\item $\alpha = 0.15$
+
+$\sigma^2 \in$ [2623.445 , 4744.634]
+
+\item $\alpha = 0.05$
+
+$\sigma^2 \in$ [2384.568 , 5351.706]
+
+\end{itemize}

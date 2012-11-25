@@ -1,0 +1,48 @@
+Construccion de un Sistema de Gestion de Clientes VIP (CVIP)
+
+Funcionalidades Requeridas
+==========================
+-el sistema debe permitir ingresar los clientes, debe integrarse con el sistema de clientes regulares(SCR), desde el cual se debe inscribir a uno o mas clientes a la vez como VIP.
+-Al inscrbir a un Cliente, se le debe poder asignar un Ejecutivo de Clientes VIP que estara a cargo de su contacto.
+-La informacion personal del cliente y su Contacto debe ser recuperada de SCR
+
+-Se debe poder desinscribir un Cliente y modificar el ejecutivo asignado
+
+El sistema debe permitir ingresar a los Ejecutivos de Clientes VIP, modificar sus datos, y eliminarlo del sistema.
+Un Ejecutivo no puede ser eliminado si está asignado como ejecutivo de algún Cliente VIP en el sistema.
+Al ingresar a un ejecutivo, se debe registrar:
+    - Rut
+    - Nombre
+    - Teléfono*
+    - E-mail*
+    - Fecha de Ingreso al Banco*
+(*): Solo estos datos pueden ser modificados, una vez que ya se ha ingresado al Ejecutivo.
+
+El sistema debe permitir además la creación, modificación y cancelación de Eventos.
+Esto puede ser hecho por un usuario Administrador de Eventos.
+Por cada evento, debe poder definirse:
+    - Nombre Corto
+    - Descripción*
+    - Lugar*
+    - Cupos (o número de Invitaciones)*
+(*): Solo estos datos pueden ser modificados, una vez que ya se ha creado el Evento.
+
+El Administrador de Eventos debe poder asignar un número de invitaciones a los Ejecutivos, quienes a su vez deben asignar una o más invitaciones a uno o más Clientes VIP.
+Para esto, el Ejecutivo debe tener una vista de sus Invitaciones.
+En esta vista, debe poder asignar las invitaciones a los Clientes.
+Al asignar la invitación, esta queda en estado "Pendiente Confirmación", la que debe hacerse manualmente por parte del Ejecutivo.
+Cuando el cliente haya confirmado, el Ejecutivo debe poder cambiar el estado a "Confirmada". Una vez celebrado el evento, el Ejecutivo averiguará si el Cliente ha asistido al evento, y cambiará el
+estado de la invitación a "Asistida" o "No Asistida".
+Al modificarse un evento, el número de invitaciones no puede ser menor que el total de las invitaciones actualmente asignadas a los Ejecutivos.
+Si un evento es Cancelado, se debe enviar un correo a los Ejecutivos, para que comuniquen a los Clientes.
+Las Invitaciones que habían sido ya asignadas a Clientes quedarán en estado "Cancelada" 
+El sistema debe tener una vista que permita ver los Clientes VIP que están de cumpleaños para los próximos 5 días.
+Se debe poder asignar un Regalo a los Clientes.
+El Regalo debe poder ser seleccionada de la Lista de Regalos del Sistema, que deben poder ser ingresados, modificados y creados.
+Los datos de un Regalo son:
+    - Tipo
+    - Descripción
+El sistema debe validar que a un Cliente no se le regale el mismo Regalo dos veces.
+En la vista, se debe poder seleccionar un cliente, y ver el historial de regalos que le han sido entregados.
+
+

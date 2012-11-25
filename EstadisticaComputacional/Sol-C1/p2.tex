@@ -1,0 +1,43 @@
+%enunciado
+Chile, Marzo 2010. El nuevo gobierno ha lanzado un programa de salud pública consistente en la instalación
+de dispensadores de condones en los baños públicos de parques, bares, restaurantes y estaciones de servicio.
+Para pemitir su distribución a bajo costo (100 pesos la unidad) se han inaugurado una marca estatal (jaguares)
+con 3 plantas A, B, C responsables de producir el 45\%, 30\% y 25\% del Total respectivamente.
+Se ha calculado que la probabilidad de que las plantas entreguen un condón con fallas es del 5\%, 15\% y 20\%
+respectivamente.
+
+%preguntas
+\begin{itemize}
+	\item Si compramos 10 unidades, ¿cuál es la probabilidad de que al menos uno salga malobrado?.
+	En este caso, ¿de qué planta es más probable que venga?.\\
+	%respuesta
+	$P(A)\ =\ 45\%$\\
+	$P(B)\ =\ 30\%$\\
+	$P(C)\ =\ 25\%$\\
+	Sea $P(\alpha)$ la probabilidad de que salga 1 condón fallado.\\
+	$P(\alpha)\ =\ P(\alpha|A)\cdot P(A)\ +\ P(\alpha|B)\cdot P(B)\ +\ P(\alpha|C)\cdot P(C)\ $\\
+	$P(\alpha)\ =\ 0.05\cdot 0.45\ +\ 0.15\cdot 0.3\ +\ 0.25\cdot 0.2\ =\ 0.11\ \approx 11\% $\\
+	Para saber de que planta es mas probable que venga, solo calculamos la probabilidad por cada planta:\\
+	$P(A|\alpha)\ =\ \frac{P(\alpha|A)P(A)}{P(\alpha)}\ =\ \frac{0.05\cdot 0.45}{0.11}\ =\ 0.20 $\\
+	$P(B|\alpha)\ =\ \frac{P(\alpha|B)P(B)}{P(\alpha)}\ =\ \frac{0.15\cdot 0.30}{0.11}\ =\ 0.40 $\\
+	$P(C|\alpha)\ =\ \frac{P(\alpha|C)P(C)}{P(\alpha)}\ =\ \frac{0.25\cdot 0.20}{0.11}\ =\ 0.45 $\\
+	Claramente es mas probable que venga de la Planta C.
+
+  	\item Marzo 2011. Para mejorar la calidad, los condones ahora se empacan y somenten a pruebas
+	de manera centralizada, mediante un procedimiento que ha mostrado fallas inferiores al 10\%.
+	¿Con qué probabilidad un condón no es rechazado por la planta empacadora?\\
+	%respuesta
+	De manera centralizada significa que ya los de todas las plantas pasan por la central de la empresa.\\
+	La Probabilidad de que salga un condon fallado de las plantas es 11\% entonces si el nuevo mecanismo
+	arroja fallas inferiores al 10\%, entonces el 90\% de los 11\% son detectados malos:
+	$$0.9\cdot 0.11\ =\ 0.099\ \approx 9.9\%$$
+	Entonces no es rechazado un condon con un 90.1\%
+
+  	\item Después de implantado este último procedimiento, ¿Cuál es la probabilidad de el ilustre
+	ciudadano obtenga un condón con fallas en la máquina dispensadora?\\
+	%respuesta
+	solo es el 10\% del 11\% de error, por lo tanto
+	$$0.1\cdot 0.11\ =\ 1.1\%$$
+
+
+\end{itemize}

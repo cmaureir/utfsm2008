@@ -1,0 +1,32 @@
+Escriba conclusiones a partir de los resultados anteriores, tomen en cuenta el largo del intervalo y si
+este contiene al cero en el caso de diferencia de medias.
+
+Analizamos los intervalos de confianza al 95\% con $n=50$ :
+
+        \begin{tabular}{|c|c|c|}\hline
+		
+	 & Cigarro Light & Cigarro Corriente\\\hline
+	$\overline{x}$ & $381.2$ & $399.6$ \\\hline
+	$\widehat{\sigma}$ & $58.5$ & $48.8$  \\\hline
+	$\mu$ & [$364$ , $398$] & [$391$ , $407$] \\\hline
+	$\bigtriangleup\mu$ & $33.6$ & $28$ \\\hline
+	$\sigma^2$& [$2348$ , $5351$]  & [$1658$ , $3722$]  \\\hline
+	$\bigtriangleup\sigma^2$& $3003$ & $2064$ \\\hline
+	$\sigma$& [$48$ , $73$]  & [$40$ , $61$]  \\\hline
+	$\bigtriangleup\sigma$& $25$  & $21$ \\\hline
+	\end{tabular}
+
+y vemos la diferencia de medias con 95\% de confianza:
+
+$\mu_x - \mu_y = (\overline{x} - \overline{y}) \pm t_{\frac{\alpha}{2}} \cdot \widehat{\sigma}^2$\\
+con : $\widehat{\sigma}^2 = \sqrt{\frac{1}{n_A}+\frac{1}{n_B}}\cdot\sqrt{\frac{n_A \widehat{\sigma}_{A}^{2} + n_B \widehat{\sigma}_{A}^{2}  }{n_A + n_B - 2}}$\\
+$\mu_x - \mu_y = -18 \pm 1.985 \cdot 10.77$\\
+$\mu_x - \mu_y = -18 \pm 21.3859$\\
+$\mu_x - \mu_y =$ [$-39.38$ , $3.38$]\\
+
+\begin{itemize}
+	\item Se puede ver en la diferencia de medias, que esta la probabilidad de que las medias sean iguales. Esto probablemente cambie si es que consideramos una mayor cantidad de datos medidos (mayor a 150), lo cual nos daria un rango mas cercano al comportamiento real de la distribuci\'on.
+	\item Podemos concluir que se ve una peque\~na notable diferencia entre los tiempos en que se demora una persona en fumarse un cigarro light y uno corriente. 
+	A pesar de haber obtenido una relaci\'on entre el tiempo de fumado y el tipo de cigarro, los rangos de los intervalos son muy similares, por lo que se dislumbra que ambas distribuciones comparten el mismo comportamiento, pero con la media corrida en aproximadamente 20 seg, por lo que podemos concluir que los cigarros light tienen menor duracion, en general, con los cigarros corrientes.
+\end{itemize}
+

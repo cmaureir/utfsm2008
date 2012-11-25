@@ -1,0 +1,98 @@
+%\subsubsection{Mantener Regalo}
+%\begin{itemize}
+%	\item Caso de Uso Expandido\\
+%		\begin{tabular}{|c|p{9.5cm}|}\hline
+%			Caso de Uso: & \\\hline
+%			Actores: & \\\hline
+%			Propósito: & \\\hline
+%			Resumen: & \\\hline
+%			Tipo: & \\\hline
+%			Descripción: & \\\hline
+%			Referencias Cruzadas: & \\\hline
+%		\end{tabular}
+%
+%	\item Curso Normal de Eventos\\
+%		\begin{tabular}{|p{6.6cm}|p{6.6cm}|}\hline
+%			\emph{Acción del Actor} & \emph{Respuesta del Sistema}\\\hline
+%			&\\\hline
+%			&\\\hline
+%			&\\\hline
+%		\end{tabular}
+%
+%	\item Curso Alternativo de Eventos\\
+%		\begin{tabular}{|p{6.6cm}|p{6.6cm}|}\hline
+%			\emph{Acción del Actor} & \emph{Respuesta del Sistema}\\\hline
+%			&\\\hline
+%			&\\\hline
+%			&\\\hline
+%		\end{tabular}
+%
+%\end{itemize}
+%
+%\subsubsection{Editar Regalo}
+%\begin{itemize}
+%	\item Caso de Uso Expandido\\
+%		\begin{tabular}{|c|p{9.5cm}|}\hline
+%			Caso de Uso: & \\\hline
+%			Actores: & \\\hline
+%			Propósito: & \\\hline
+%			Resumen: & \\\hline
+%			Tipo: & \\\hline
+%			Descripción: & \\\hline
+%			Referencias Cruzadas: & \\\hline
+%		\end{tabular}
+%
+%	\item Curso Normal de Eventos\\
+%		\begin{tabular}{|p{6.6cm}|p{6.6cm}|}\hline
+%			\emph{Acción del Actor} & \emph{Respuesta del Sistema}\\\hline
+%			&\\\hline
+%			&\\\hline
+%			&\\\hline
+%		\end{tabular}
+%
+%	\item Curso Alternativo de Eventos\\
+%		\begin{tabular}{|p{6.6cm}|p{6.6cm}|}\hline
+%			\emph{Acción del Actor} & \emph{Respuesta del Sistema}\\\hline
+%			&\\\hline
+%			&\\\hline
+%			&\\\hline
+%		\end{tabular}
+%
+%\end{itemize}
+
+\subsubsection{Asignar Invitaciones a Cliente VIP}
+\begin{itemize}
+	\item Caso de Uso Expandido\\
+		\begin{tabular}{|c|p{9.5cm}|}\hline
+			Caso de Uso: & Asignar Invitaciones a Cliente VIP\\\hline
+			Actores: & Ejecutivo del Cliente VIP\\\hline
+			Propósito: & Poder asignar invitaciones de un evento determinado a algún Cliente VIP\\\hline
+			Resumen: & El Ejecutivo del Cliente VIP, posee el privilegio de poder asignar una cantidad de entradas a algún Cliente VIP para que éste pueda asistir a dicho evento\\\hline
+			Tipo: & Esencial, Secundario\\\hline
+			Descripción: &El Ejecutivo del Cliente VIP debe poder asignar una invitación a un Cliente VIP \\\hline
+			Referencias Cruzadas: & Administrar Invitaciones\\\hline
+		\end{tabular}
+
+	\item Curso Normal de Eventos\\
+		\begin{tabular}{|p{6.6cm}|p{6.6cm}|}\hline
+			\emph{Acción del Actor} & \emph{Respuesta del Sistema}\\\hline
+			1.Administrar Invitaciones&\\\hline
+			&2.Se despliega un menu con las opciones para poder administrar las invitaciones\\\hline
+			3.Selecciona opción de Asignar Invitaciones a CVIP&\\\hline
+			&4.Se despliega un listado con los eventos y clientes disponibles\\\hline
+			5.Selecciona un evento y un cliente, con una cierta cantidad de invitaciones&\\\hline
+			6.Guarda los cambios&\\\hline
+			&7.Vuelve al menu principal\\\hline
+			8.Sale del sistema de administración&\\\hline
+		\end{tabular}
+
+	\item Curso Alternativo de Eventos\\
+		\begin{tabular}{|p{6.6cm}|p{6.6cm}|}\hline
+			\emph{Acción del Actor} & \emph{Respuesta del Sistema}\\\hline
+			5.No hay eventos disponibles&Se envia un mensaje de error diciendo que no hay eventos disponibles\\\hline
+			5.Se envian mas invitaciones de las cuales el evento tiene disponible&Se envia un mensaje de error diciendo que la cantidad de invitaciones no es válida\\\hline
+			5.Se cancela un evento justo en el momento de la elección&Se envia un mensaje de error diciendo que el evento ya no esta mas tiempo disponible\\\hline
+			5.Se agotan las invitaciones justo en el momento que se esta haciendo la asignación&Se envia un error diciendo que ya no hay invitaciones disponibles para el evento\\\hline
+		\end{tabular}
+
+\end{itemize}

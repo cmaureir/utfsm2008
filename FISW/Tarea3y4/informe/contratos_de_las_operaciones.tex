@@ -1,0 +1,78 @@
+
+% contrato de las operaciones identificadas que tengan por post-condicion un cambio del estado del sistema (creacion/eliminacion/modificacion)
+
+% NOTA: No es necesario poner las salidas, las referencias crusadas, notas y excepciones...
+\begin{itemize}
+	\item Contrato crearRegalo \\
+	\begin{tabular}{|c|p{10cm}|}\hline
+		Nombre: & crearRegalo\\\hline	
+		Par\'ametros: & string tipo , string descripcion  \\\hline
+		Responsabilidades: & Guardar en el sistema la definici\'on de un nuevo Regalo (su tipo y descripci\'on). \\\hline
+		Tipo: & Sistema \\\hline
+%		Referencias Cruzadas: &  \\\hline
+%		Notas: &  \\\hline
+		Excepciones: & Ya existe el regalo a ingresado \\\hline
+%		Salidas: &  \\\hline
+		Precondiciones: & El tipo de regalo debe ser \'unico. \\\hline
+		Postcondiciones: &  Se crea una nueva instancia de Regalo, con idRegalo \'unico.\\\hline
+	\end{tabular}
+	\item Contrato editarRegalo \\
+	\begin{tabular}{|c|p{10cm}|}\hline
+		Nombre: & editarRegalo \\\hline	
+		Par\'ametros: & int idRegalo \\\hline
+		Responsabilidades: & Despliega los atributos del Regalo correspondiente (tipo y descripci\'on)
+		para luego pasar a editar y guardar los cambios. \\\hline
+		Tipo: & Sistema \\\hline
+%		Referencias Cruzadas: &  \\\hline
+%		Notas: &  \\\hline
+		Excepciones: & El Regalo a editar no existe \\\hline
+%		Salidas: &  \\\hline
+		Precondiciones: & El idRegalo ingresado debe existir dentro de las instancias de Regalo.\\\hline
+		Postcondiciones: & Se guardan los nuevos atributos en la instancia seleccionada. \\\hline
+	\end{tabular}
+
+	\item Contrato eliminarRegalo \\
+	\begin{tabular}{|c|p{10cm}|}\hline
+		Nombre: & eliminarRegalo\\\hline	
+		Par\'ametros: & int idRegalo\\\hline
+		Responsabilidades: & Elimina la instancia de Regalo que coincida con idRegalo \\\hline
+		Tipo: & Sistena \\\hline
+%		Referencias Cruzadas: &  \\\hline
+%		Notas: &  \\\hline
+		Excepciones: & El Regalo a eliminar no existe\\\hline
+%		Salidas: &  \\\hline
+		Precondiciones: & El idRegalo ingresado debe existir dentro de las instancias de Regalo. \\\hline
+		Postcondiciones: & La instancia que coincida con idRegalo es eliminada. \\\hline
+	\end{tabular}
+
+%no modificaba nada >.<
+%	\item ConfirmarAsignaciones\\
+%	\begin{tabular}{|c|p{10cm}|}\hline
+%		Nombre: & confirmarAsignaciones\\\hline	
+%		Par\'ametros: & listaInvitacionesAsignadas \\\hline
+%		Responsabilidades: & Validar que la sumatoria de las invitaciones asignadas a todos los Clientes VIP no supere la sumatoria de las Invitaciones asignadas al Ejecutivo VIP para el Evento\\\hline
+%		Tipo: &  \\\hline
+%%		Referencias Cruzadas: &  \\\hline
+%%		Notas: &  \\\hline
+%		Excepciones: &  \\\hline
+%		Salidas: &  \\\hline
+%		Precondiciones: & Ninguna \\\hline
+%		Postcondiciones: &  \\\hline
+%	\end{tabular}
+
+	\item Contrato guardarCambios\\
+	\begin{tabular}{|c|p{10cm}|}\hline
+		Nombre: & guardarCambios\\\hline	
+		Par\'ametros: & ejecutivoVIP, listaInvitacionesAsignadas \\\hline
+		Responsabilidades: & Actualizar por cada Cliente VIP del ejecutivoVIP las invitaciones asignadas \\\hline
+		Tipo: & Sistema \\\hline
+%		Referencias Cruzadas: &  \\\hline
+%		Notas: &  \\\hline
+		Excepciones: & El ejecutivoVIP no tenia ninguna invitaci\'on asignada \\\hline
+%		Salidas: &  \\\hline
+		Precondiciones: & Se modificaron uno o m\'as de los valores editables de las invitaciones asignadas de los usuarios para el evento \\\hline
+		Postcondiciones: & Se elimin\'o todas las invitaciones actualmente asignadas a los clientesVIP del ejecutivoVIP.\\ & Se crearon invitaciones y se asignaron para el clienteVIP y el Evento segun hallan sido ingresadas anteriormente y se establecieron los estados respectivos a cada invitaci\'on. \\\hline
+
+	\end{tabular}
+
+\end{itemize}

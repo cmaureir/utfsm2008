@@ -1,0 +1,32 @@
+Calcular el intervalo de confianza para la varianza del tiempo de duraci\'on del cigarro con filtro color
+caf\'e, con un 75 \%, 85 \% y 95 \% de confianza.
+
+Teniendo en cuenta que: \\
+
+$P(\frac{\sum(y_i - \overline{y})^2}{\chi_{1-{\frac{\alpha}{2}}}^2} <= \sigma^2 <= \frac{\sum(y_i - \overline{y})^2}{\chi_{\frac{\alpha}{2}}^2}) = 1 - \alpha$\\
+
+$\widehat{s}^2 = \sum \frac{(y_i - \overline{y})^2}{n-1}$\\
+
+$\Leftrightarrow P(\frac{\widehat{s}^2 (n-1)}{\chi_{1-{\frac{\alpha}{2}}}^2} <= \sigma^2 <= \frac{\widehat{s}^2 (n-1)}{\chi_{\frac{\alpha}{2}}^2}) = 1 - \alpha$
+
+$\widehat{s}^2 = 2384.821$\\
+$n - 1 = 49$\\
+$\chi^2$ = distribucion chi-cuadrado con n-1 grados de libertad\\
+
+Por lo que: \\
+
+\begin{itemize}
+
+\item $\alpha = 0.25$
+
+$\sigma^2 \in$ [1926.717 , 3092.259]
+
+\item $\alpha = 0.15$
+
+$\sigma^2 \in$ [1824.601 , 3299.884]
+
+\item $\alpha = 0.05$
+
+$\sigma^2 \in$ [1658.463 , 3722.101]
+
+\end{itemize}

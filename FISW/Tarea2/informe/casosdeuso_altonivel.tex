@@ -1,0 +1,132 @@
+\subsubsection{Clientes y Ejecutivos VIP}
+
+\begin{itemize}
+	\item Mantener Clientes VIP\\
+		\begin{tabular}[5 cm]{|c|p{11cm}|}\hline
+			Caso de Uso: & Mantener Clientes VIP\\\hline
+			Actores: & Administrador de Sistema\\\hline
+			Tipo: & Esencial, Primario\\\hline
+			Descripción: & El Sistema permite Crear, Obtener, Actualizar y Borrar (CRUD) Clientes VIP\\\hline
+		\end{tabular}
+
+	\item Editar Clientes VIP\\
+		\begin{tabular}[5 cm]{|c|p{11cm}|}\hline
+			Caso de Uso: & Editar Clientes VIP\\\hline
+			Actores: & Administrador del Sistema\\\hline
+			Tipo: & Esencial, Secundario\\\hline
+			Descripción: & El Sistema permite la edición de los datos de los Clientes VIP\\\hline
+		\end{tabular}
+
+	\item Obtener Información del Cliente\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Obtener Información del Cliente\\\hline
+			Actores: & SCR, Administrador del Sistema\\\hline
+			Tipo: & Esencial, Primario\\\hline
+			Descripción: &El Sistema permite obtener toda la información del Clienete desde el SCR\\\hline
+		\end{tabular}
+
+	\item Mantener Ejecutivos Clientes VIP\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Mantener Ejecutivos Clientes VIP\\\hline
+			Actores: &Administrador del Sistema\\\hline
+			Tipo: & Esencial, Primario\\\hline
+			Descripción: & Crear, Obtener, Actualizar y Borrar (CRUD) Ejecutivos de Clientes VIP\\\hline
+		\end{tabular}
+
+	\item Editar Ejecutivo Clientes VIP\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Editar Ejecutivo Clientes VIP\\\hline
+       			Actores: &Administrador del Sistema\\\hline
+			Tipo: & Esencial, Secundario\\\hline
+			Descripción: &El Sistema permite la edición de los datos de los Ejecutivos de Clientes VIP\\\hline
+		\end{tabular}
+\end{itemize}
+
+
+\subsubsection{Eventos}
+
+\begin{itemize}
+	\item Mantener Eventos\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Mantener Eventos\\\hline
+			Actores: & Administrador de Eventos\\\hline
+			Tipo: & Esencial, Primario\\\hline
+			Descripción: & Crear, Obtener, Actualizar y Borrar (CRUD) Eventos\\\hline
+		\end{tabular}
+
+	\item Editar Evento\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Editar Evento\\\hline
+			Actores: & Administrador de Eventos\\\hline
+			Tipo: & Esencial, Secundario\\\hline
+			Descripción: &El Sistema permite la edición de los datos de los Eventos\\\hline
+		\end{tabular}
+
+	\item Administrar Invitaciones de Evento\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Administrar Invitaciones de Evento\\\hline
+			Actores: &Administrador de Eventos\\\hline
+			Tipo: & Esencial, Primario\\\hline
+			Descripción: &El Administrador de Eventos debe poder permitir administrar las invitaciones de cada evento para que los Ejecutivos puedan enviar invitaciones a los Clientes VIP\\\hline
+		\end{tabular}
+
+	\item Administrar Invitaciones\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Administrar Invitaciones\\\hline
+			Actores: & Ejecutivo VIP\\\hline
+			Tipo: & Esencial, Primario\\\hline
+			Descripción: &El Ejecutivo VIP debe poder administrar las invitaciones, llevando un registro\\\hline
+		\end{tabular}
+
+	\item Asignar Invitaciones a Cliente VIP\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Asignar Invitaciones a Clientes VIP\\\hline
+			Actores: &Ejecutivo VIP\\\hline
+			Tipo: & Esencial, Secundario\\\hline
+			Descripción: &El Ejecutivo VIP debe poder asignar una invitación a un Cliente VIP\\\hline
+		\end{tabular}
+
+\end{itemize}
+\subsubsection{Regalos}
+
+\begin{itemize}
+	\item Consultar Próximos Cumpleaños\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Consultar Próximos Cumpleaños\\\hline
+			Actores: &Ejecutivo VIP\\\hline
+			Tipo: & Esencial, Primario\\\hline
+			Descripción: &El Ejecutivo VIP debe poder consultar sobre los próximos cumpleaños para poder realizar su trabajo\\\hline
+		\end{tabular}
+
+	\item Mantener Regalos\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Mantener Regalos\\\hline
+			Actores: & Administrador del Sistema\\\hline
+			Tipo: & Esencial, Primario\\\hline
+			Descripción: & Crear, Obtener, Actualizar y Borrar (CRUD) Regalos\\\hline
+		\end{tabular}
+
+	\item Editar Regalo\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Editar Regalo \\\hline
+			Actores: & Administrador del Sistema\\\hline
+			Tipo: & Esencial, Secundario\\\hline
+			Descripción: &El Sistema permite la edición de los datos de los Regalos\\\hline
+		\end{tabular}
+
+	\item Asignar Regalo\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Asignar Regalo\\\hline
+			Actores: &Ejecutivo VIP\\\hline
+			Tipo: & Esencial, Secundario\\\hline
+			Descripción: &El Ejecutivo VIP permite la asignación de un regalo a un Cliente VIP\\\hline
+		\end{tabular}
+
+	\item Ver Historial de Regalos de Cliente\\
+		\begin{tabular}{|c|p{11cm}|}\hline
+			Caso de Uso: & Ver Historial de Regalos de Clientes\\\hline
+			Actores: &Ejecutivo VIP\\\hline
+			Tipo: & Esencial, Secundario\\\hline
+			Descripción: &El Ejecutivo debe poder ver el historial de regalos de Clientes VIP para que no se repita\\\hline
+		\end{tabular}
+\end{itemize}

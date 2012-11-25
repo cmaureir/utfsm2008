@@ -1,0 +1,600 @@
+
+Encuestado 1
+
+Edad iniciacion sexual: 13
+Horas de tv: 7
+Tipo programa: Adultos
+
+Encuestado 2
+
+Edad iniciacion sexual: 15
+Horas de tv: 5
+Tipo programa: Entretencion
+
+Encuestado 3
+
+Edad iniciacion sexual: 21
+Horas de tv: 3
+Tipo programa: Adultos
+
+Encuestado 4
+
+Edad iniciacion sexual: 17
+Horas de tv: 5
+Tipo programa: Entretencion
+
+Encuestado 5
+
+Edad iniciacion sexual: 13
+Horas de tv: 7
+Tipo programa: Adultos
+
+Encuestado 6
+
+Edad iniciacion sexual: 14
+Horas de tv: 6
+Tipo programa: Ayuda Social
+
+Encuestado 7
+
+Edad iniciacion sexual: 19
+Horas de tv: 1
+Tipo programa: Adultos
+
+Encuestado 8
+
+Edad iniciacion sexual: 18
+Horas de tv: 6
+Tipo programa: Adultos
+
+Encuestado 9
+
+Edad iniciacion sexual: 15
+Horas de tv: 8
+Tipo programa: Juveniles
+
+Encuestado 10
+
+Edad iniciacion sexual: 15
+Horas de tv: 1
+Tipo programa: Entretencion
+
+Encuestado 11
+
+Edad iniciacion sexual: 18
+Horas de tv: 0
+Tipo programa: Ayuda Social
+
+Encuestado 12
+
+Edad iniciacion sexual: 18
+Horas de tv: 5
+Tipo programa: Culturales
+
+Encuestado 13
+
+Edad iniciacion sexual: 19
+Horas de tv: 7
+Tipo programa: Entretencion
+
+Encuestado 14
+
+Edad iniciacion sexual: 20
+Horas de tv: 6
+Tipo programa: Adultos
+
+Encuestado 15
+
+Edad iniciacion sexual: 15
+Horas de tv: 2
+Tipo programa: Deportivos
+
+Encuestado 16
+
+Edad iniciacion sexual: 16
+Horas de tv: 5
+Tipo programa: Deportivos
+
+Encuestado 17
+
+Edad iniciacion sexual: 15
+Horas de tv: 3
+Tipo programa: Telenovelas
+
+Encuestado 18
+
+Edad iniciacion sexual: 20
+Horas de tv: 1
+Tipo programa: Deportivos
+
+Encuestado 19
+
+Edad iniciacion sexual: 15
+Horas de tv: 0
+Tipo programa: Juveniles
+
+Encuestado 20
+
+Edad iniciacion sexual: 16
+Horas de tv: 4
+Tipo programa: Juveniles
+
+Encuestado 21
+
+Edad iniciacion sexual: 19
+Horas de tv: 0
+Tipo programa: Deportivos
+
+Encuestado 22
+
+Edad iniciacion sexual: 20
+Horas de tv: 2
+Tipo programa: Telenovelas
+
+Encuestado 23
+
+Edad iniciacion sexual: 15
+Horas de tv: 3
+Tipo programa: Juveniles
+
+Encuestado 24
+
+Edad iniciacion sexual: 13
+Horas de tv: 0
+Tipo programa: Culturales
+
+Encuestado 25
+
+Edad iniciacion sexual: 13
+Horas de tv: 0
+Tipo programa: Juveniles
+
+Encuestado 26
+
+Edad iniciacion sexual: 16
+Horas de tv: 2
+Tipo programa: Deportivos
+
+Encuestado 27
+
+Edad iniciacion sexual: 17
+Horas de tv: 5
+Tipo programa: Entretencion
+
+Encuestado 28
+
+Edad iniciacion sexual: 19
+Horas de tv: 6
+Tipo programa: Juveniles
+
+Encuestado 29
+
+Edad iniciacion sexual: 14
+Horas de tv: 3
+Tipo programa: Culturales
+
+Encuestado 30
+
+Edad iniciacion sexual: 13
+Horas de tv: 8
+Tipo programa: Entretencion
+
+Encuestado 31
+
+Edad iniciacion sexual: 19
+Horas de tv: 6
+Tipo programa: Deportivos
+
+Encuestado 32
+
+Edad iniciacion sexual: 18
+Horas de tv: 1
+Tipo programa: Telenovelas
+
+Encuestado 33
+
+Edad iniciacion sexual: 15
+Horas de tv: 0
+Tipo programa: Ayuda Social
+
+Encuestado 34
+
+Edad iniciacion sexual: 14
+Horas de tv: 0
+Tipo programa: Adultos
+
+Encuestado 35
+
+Edad iniciacion sexual: 15
+Horas de tv: 1
+Tipo programa: Adultos
+
+Encuestado 36
+
+Edad iniciacion sexual: 18
+Horas de tv: 5
+Tipo programa: Juveniles
+
+Encuestado 37
+
+Edad iniciacion sexual: 18
+Horas de tv: 0
+Tipo programa: Telenovelas
+
+Encuestado 38
+
+Edad iniciacion sexual: 21
+Horas de tv: 7
+Tipo programa: Deportivos
+
+Encuestado 39
+
+Edad iniciacion sexual: 15
+Horas de tv: 1
+Tipo programa: Adultos
+
+Encuestado 40
+
+Edad iniciacion sexual: 19
+Horas de tv: 1
+Tipo programa: Adultos
+
+Encuestado 41
+
+Edad iniciacion sexual: 21
+Horas de tv: 6
+Tipo programa: Culturales
+
+Encuestado 42
+
+Edad iniciacion sexual: 15
+Horas de tv: 6
+Tipo programa: Adultos
+
+Encuestado 43
+
+Edad iniciacion sexual: 20
+Horas de tv: 2
+Tipo programa: Adultos
+
+Encuestado 44
+
+Edad iniciacion sexual: 16
+Horas de tv: 3
+Tipo programa: Telenovelas
+
+Encuestado 45
+
+Edad iniciacion sexual: 13
+Horas de tv: 3
+Tipo programa: Ayuda Social
+
+Encuestado 46
+
+Edad iniciacion sexual: 21
+Horas de tv: 4
+Tipo programa: Adultos
+
+Encuestado 47
+
+Edad iniciacion sexual: 18
+Horas de tv: 2
+Tipo programa: Telenovelas
+
+Encuestado 48
+
+Edad iniciacion sexual: 16
+Horas de tv: 2
+Tipo programa: Telenovelas
+
+Encuestado 49
+
+Edad iniciacion sexual: 15
+Horas de tv: 2
+Tipo programa: Ayuda Social
+
+Encuestado 50
+
+Edad iniciacion sexual: 16
+Horas de tv: 7
+Tipo programa: Adultos
+
+Encuestado 51
+
+Edad iniciacion sexual: 16
+Horas de tv: 3
+Tipo programa: Juveniles
+
+Encuestado 52
+
+Edad iniciacion sexual: 13
+Horas de tv: 5
+Tipo programa: Juveniles
+
+Encuestado 53
+
+Edad iniciacion sexual: 15
+Horas de tv: 6
+Tipo programa: Juveniles
+
+Encuestado 54
+
+Edad iniciacion sexual: 16
+Horas de tv: 2
+Tipo programa: Telenovelas
+
+Encuestado 55
+
+Edad iniciacion sexual: 13
+Horas de tv: 5
+Tipo programa: Juveniles
+
+Encuestado 56
+
+Edad iniciacion sexual: 18
+Horas de tv: 1
+Tipo programa: Telenovelas
+
+Encuestado 57
+
+Edad iniciacion sexual: 15
+Horas de tv: 4
+Tipo programa: Juveniles
+
+Encuestado 58
+
+Edad iniciacion sexual: 15
+Horas de tv: 5
+Tipo programa: Deportivos
+
+Encuestado 59
+
+Edad iniciacion sexual: 17
+Horas de tv: 0
+Tipo programa: Adultos
+
+Encuestado 60
+
+Edad iniciacion sexual: 16
+Horas de tv: 0
+Tipo programa: Telenovelas
+
+Encuestado 61
+
+Edad iniciacion sexual: 21
+Horas de tv: 2
+Tipo programa: Telenovelas
+
+Encuestado 62
+
+Edad iniciacion sexual: 14
+Horas de tv: 5
+Tipo programa: Adultos
+
+Encuestado 63
+
+Edad iniciacion sexual: 19
+Horas de tv: 7
+Tipo programa: Juveniles
+
+Encuestado 64
+
+Edad iniciacion sexual: 15
+Horas de tv: 8
+Tipo programa: Juveniles
+
+Encuestado 65
+
+Edad iniciacion sexual: 18
+Horas de tv: 7
+Tipo programa: Juveniles
+
+Encuestado 66
+
+Edad iniciacion sexual: 18
+Horas de tv: 3
+Tipo programa: Culturales
+
+Encuestado 67
+
+Edad iniciacion sexual: 20
+Horas de tv: 0
+Tipo programa: Deportivos
+
+Encuestado 68
+
+Edad iniciacion sexual: 15
+Horas de tv: 7
+Tipo programa: Entretencion
+
+Encuestado 69
+
+Edad iniciacion sexual: 17
+Horas de tv: 2
+Tipo programa: Juveniles
+
+Encuestado 70
+
+Edad iniciacion sexual: 15
+Horas de tv: 7
+Tipo programa: Adultos
+
+Encuestado 71
+
+Edad iniciacion sexual: 14
+Horas de tv: 0
+Tipo programa: Adultos
+
+Encuestado 72
+
+Edad iniciacion sexual: 15
+Horas de tv: 2
+Tipo programa: Juveniles
+
+Encuestado 73
+
+Edad iniciacion sexual: 21
+Horas de tv: 3
+Tipo programa: Ayuda Social
+
+Encuestado 74
+
+Edad iniciacion sexual: 15
+Horas de tv: 8
+Tipo programa: Adultos
+
+Encuestado 75
+
+Edad iniciacion sexual: 18
+Horas de tv: 2
+Tipo programa: Telenovelas
+
+Encuestado 76
+
+Edad iniciacion sexual: 16
+Horas de tv: 2
+Tipo programa: Adultos
+
+Encuestado 77
+
+Edad iniciacion sexual: 18
+Horas de tv: 7
+Tipo programa: Adultos
+
+Encuestado 78
+
+Edad iniciacion sexual: 19
+Horas de tv: 6
+Tipo programa: Deportivos
+
+Encuestado 79
+
+Edad iniciacion sexual: 16
+Horas de tv: 3
+Tipo programa: Culturales
+
+Encuestado 80
+
+Edad iniciacion sexual: 15
+Horas de tv: 2
+Tipo programa: Adultos
+
+Encuestado 81
+
+Edad iniciacion sexual: 15
+Horas de tv: 3
+Tipo programa: Adultos
+
+Encuestado 82
+
+Edad iniciacion sexual: 16
+Horas de tv: 4
+Tipo programa: Deportivos
+
+Encuestado 83
+
+Edad iniciacion sexual: 18
+Horas de tv: 4
+Tipo programa: Adultos
+
+Encuestado 84
+
+Edad iniciacion sexual: 14
+Horas de tv: 6
+Tipo programa: Juveniles
+
+Encuestado 85
+
+Edad iniciacion sexual: 16
+Horas de tv: 6
+Tipo programa: Adultos
+
+Encuestado 86
+
+Edad iniciacion sexual: 18
+Horas de tv: 3
+Tipo programa: Deportivos
+
+Encuestado 87
+
+Edad iniciacion sexual: 16
+Horas de tv: 3
+Tipo programa: Ayuda Social
+
+Encuestado 88
+
+Edad iniciacion sexual: 15
+Horas de tv: 5
+Tipo programa: Telenovelas
+
+Encuestado 89
+
+Edad iniciacion sexual: 15
+Horas de tv: 2
+Tipo programa: Deportivos
+
+Encuestado 90
+
+Edad iniciacion sexual: 14
+Horas de tv: 6
+Tipo programa: Deportivos
+
+Encuestado 91
+
+Edad iniciacion sexual: 16
+Horas de tv: 3
+Tipo programa: Deportivos
+
+Encuestado 92
+
+Edad iniciacion sexual: 13
+Horas de tv: 6
+Tipo programa: Adultos
+
+Encuestado 93
+
+Edad iniciacion sexual: 15
+Horas de tv: 8
+Tipo programa: Adultos
+
+Encuestado 94
+
+Edad iniciacion sexual: 21
+Horas de tv: 0
+Tipo programa: Adultos
+
+Encuestado 95
+
+Edad iniciacion sexual: 15
+Horas de tv: 2
+Tipo programa: Telenovelas
+
+Encuestado 96
+
+Edad iniciacion sexual: 15
+Horas de tv: 7
+Tipo programa: Telenovelas
+
+Encuestado 97
+
+Edad iniciacion sexual: 15
+Horas de tv: 4
+Tipo programa: Culturales
+
+Encuestado 98
+
+Edad iniciacion sexual: 20
+Horas de tv: 1
+Tipo programa: Juveniles
+
+Encuestado 99
+
+Edad iniciacion sexual: 13
+Horas de tv: 7
+Tipo programa: Juveniles
+
+Encuestado 100
+
+Edad iniciacion sexual: 17
+Horas de tv: 2
+Tipo programa: Juveniles

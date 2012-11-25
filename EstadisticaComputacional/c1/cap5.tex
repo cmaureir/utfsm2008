@@ -1,0 +1,89 @@
+\subsection{Probabilidad: Axiomas y Modelos}
+Metodos para recolectar y analizar datos acerca de un fenomeno acerca del cual se tiene \textbf{intertudumbre}. Obtener conclusiones:
+\begin{itemize}
+\item Entender un fenomeno
+\item Tomar decisiones
+\item Controlar un fenomeno
+\end{itemize}
+
+\subsection{Metodo estadistico}
+\begin{itemize}
+\item Recolectar datos
+\item Analizar los datos
+\item Modelar el fenomeno
+\item Sacar conclusiones
+\end{itemize}
+
+\subsubsection{Probabilidades}
+Modelo matematico para la incertidumbre. Nocion Frecuentista generaliza la idea de frecuencia de un suceso o resultado
+
+\subsubsection{Espacio Muestral $\Omega$}
+Conjunto de resultados elementales posibles.\\
+Ej. Tirar un dado dos veces.\\
+$\Omega = {(1,1) (1,2) (1,3) \ldots (6,6)}$\\
+Ej. Tiempo de espera en una cola de supermercado.\\
+$\Omega = [0,100]$\\
+\subsubsection{Eventos}
+Cualquier subconjunto del espacio muestral $\Omega$ se denomina \textbf{evento}. Se busca hablar de la \textbf{probabilidad de eventos}
+\subsubsection{Axiomas}
+Una medida de probabilidad es una medida de la certeza de un evento. La probabilidad de un evento que debiera reflejar la certeza con que obtendremos uno de los resultados del evento.
+\begin{itemize}
+\item Axioma 1: $P(\Omega) = 1$
+\item Axioma 2: $P(A) >= 0$
+\item Axioma 3: Si A y B son eventos disjuntos P(A U B) = P(A) + P(B)
+\end{itemize}
+\subsubsection{Implicancia de los Axiomas}
+\begin{itemize}
+\item $P(A^c) = 1 - P(A)$
+\item Si A $\subset$ B $\rightarrow P(A) <= P(B)$
+\item P(B-A) = P(B) - P(A $\bigcap$ B)
+\item P(A $\bigcup$ B) = P(B) + P(B) - P(A $\bigcap$ B)
+\item $P(\bigcup A_i) <= \sum P(A_i)$
+\end{itemize}
+
+\subsubsection{Sigma Algebra}
+Coleccion de eventos que son posible \textbf{medir}. Debe satisfacer propiedades minimas de cerradura para que sea util. Como se trata de subconjuntos, tiene sentido hablar de operaciones como complementos, intersecciones, uniones, diferencias.\\
+Dado un espacio muestral $\Omega$, una sigma algebra es una coleccion C de sobconjuntos de $\Omega$ tal que:
+\begin{itemize}
+\item C $\neq \Phi$
+\item Si A $\epsilon$ C entonces $(\Omega - A) \epsilon C$
+\item Si $A_1 \ldots A_n \epsilon C => A_1 U \ldots U A_ni\ \epsilon\ C$ 
+\end{itemize}
+
+\subsubsection{Medida de Probabilidad}
+Dado un conjunto $\Omega$ y una sigma algebra C, una medida de probabilidad es una funcion que:\\
+$P: C \rightarrow R$
+
+\begin{itemize}
+\item $P(\Omega) = 1$
+\item $P(A) >= 0$ para todo A $\epsilon$ C
+\item Si $A_1 \ldots A_n \epsilon C$ son disjuntos, $P(A_1 \ldots \bigcup A_n) = P(A_1) + \ldots + P(A_n)$
+\end{itemize}
+$(\Omega, C, P)$: Espacio de Probabilidad\\
+$(\Omega, C)$: Espacio Medible\\
+C es la Familia de los Eventos Medibles\\
+Podemos pensar como probabilidad la frecuencia con que se ve un resultado si observamos el fenomeno multiples veces.
+
+\subsubsection{Nocion frecuentista}
+Suponer repetir un experimento N veces y de estas, $N_a$ veces observamos un resultado contenido en el evento A. La probabilidad seria:\\ \\
+$P(A) = lim_{n \rightarrow \infty} \frac{N_a}{N}$
+
+\subsubsection{Nocion te\'orica}
+Si tenemos un experimento que puede ocurrir de N formas, nuestro espacio muestral es finito $\Omega$.\\
+Una sigma algebra posible es Pow($\Omega$).\\
+Una medida de probabilidad \textbf{natural} es:\\ \\
+$P(A) = \frac{|A|}{N} = \frac{|A|}{\Omega}$ donde $|A|$ es la cardinalidad de A.\\
+$(\Omega, Pow(\Omega), P)$ es un espacio de probabilidad valido.\\ \\
+Ej. Tirar un dado y que salga par:\\
+$P({2,4,6}) = \frac{|{2,4,6,}|}{|{1,2,3,4,5,6,}|} = \frac{3}{6} = \frac{1}{2} = \frac{ResultadosFavorablesAlEventoA}{ResultadosPosibles}$
+
+\subsubsubsection{Combinaciones}
+Formas distintas de obtener r elementos de un lote de n:\\
+$C(n,r) = \frac{n!}{n!(n-r)!}$
+
+\subsection{Nocion Bayesiana}
+``La probabilidad de que el cafe este frio es 0.8''\\
+Es valido querer aclarar nuestro grado de incertidumbre. ?`Podr\'iamos darle una interpretaci\'on a la sentencia bajo la nocion frecuentista o teorica?.\\
+La Nocion Bayesiana se entiende como la probabilidad con un grado subjetivo de certeza. Lo importante es desarrollar una forma de operar con estos \textbf{grados de certeza} para combinarlos y actualizarlos si se tienen nuevas observaciones. Es compatible con la teorica o frecuentista.
+
+

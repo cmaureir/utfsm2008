@@ -1,0 +1,165 @@
+PUNTEO DE CONCEPTOS PARA LA TAREA:
+	1- Modelamiento estatico
+	2- Modelamiento dinamico:
+		- Un Caso de Uso representa una tarea que será apoyada por el sistema, en la que se describe un escenario en que un Actor interactúa con el sistema
+		- Cada caso de uso se complementa con una descripción narrativa de la interacción Actor - Sistema
+		- El diagrama más la descripción narrativa constituyen el Modelo Dinámico de análisis del sistema
+		- Dinámico, porque explica como fluyen las interacciones Actor- Sistema
+
+Cosas a reconocer en el diagrama de casos de usos:
+
+	1- Actores: Son los usuarios del sistema, pueden ser otros sistemas o personas.
+	2- Casos de uso
+	3- Relaciones entre casos
+	4- Tipos de relaciones (generalizacion, extend, include)
+
+En el modelo de dominios:
+	1- Entidades/Conceptos de Dominio
+		Objetos físicos o tangibles
+		Lugares
+		Transacciones
+		Roles de la Gente (Cliente, Vendedor)
+		Contenedores de Conceptos
+		Otros sistemas 
+		Sustantivos Abstractos ("Sed")
+		Organizaciones
+		Eventos (Emergencia)
+		Reglas/Políticas
+		Grabaciones/Logs
+	2- Atributos de las entidades
+		Conceptos o entidades simples que puedan pertenecer a otro atributo.
+	3- Relaciones entre las entidades
+		Verbos e interacciones entre entidades.
+		-Poseen cardinalidad.
+	4- Tipos de relaciones posibles (herencia, composicion, agregacion)
+
+* no se debe explicitar el tipo de dato de los atributos.
+
+LA TAREA EN SI:
+
+Sistema de Gestion de Clientes VIP (CVIP) del Banco Nacional De Jaguarlandia.
+objetivo: apoyar la tarea de fidelizcion de los clientes VIP del banco, de manera de administrar los obsequios e invitaciones a eventos organizados al banco que se envian a los clientes.
+
+Actores:
+	-Cliente VIP
+	-Ejecutivo de Clientes VIP
+	-Administrador de Eventos
+	-Administrador del Sistema
+
+Casos de Uso:
+	-Ingresar, Modificar Ejecutivo del Cliente y Desinscribir Cliente VIP.
+	-Ingresar, Modificar, Eliminar Ejecutivos del Cliente.
+	-Crear, Modificar y Cancelar Eventos (Administrador de Eventos).
+	-Asignacion Regalo a Clientes (VIP).
+	
+Entidades y sus atributos y relaciones:
+
+		-Clientes VIP:
+			-Ingresar:
+				- Debe integrarse con el sistema de clientes regulares (SCR) desde el cual debe inscribir a uno o mas clientes a la vez como clientes VIP.
+				- Se le debe poder asignar un Ejecutivo de Clientes VIP al inscribir al cliente como vip.
+				- La informacion del cliente se almacena en el SCR.
+			-Desinscribir.
+			-Modificar al ejecutivo asignado.
+			- Posee un Historial de Regalos
+
+		-Ejecutivo de Clientes VIP:
+			-Ingresar:
+				- Se deben registrar: Rut, Nombre, Telefono, E-mail, fecha de ingreso al Banco
+			-Modificar:
+				- Telefono
+				- E-mail
+				- Fecha de ingreso al Banco
+			-Eliminar:
+				- No pueden ser eliminados si estan asignados como ejecutivo de algun cliente VIP.
+			-Asignan una o mas invitaciones a uno o mas Clientes VIP.
+				- Utiliza la Vista de sus Invitaciones.
+				- Debe confirmar la asignacion de Invitaciones Manualmente una vez que el cliente haya confirmado. (estado: "Confirmada")
+				- Debe revisar si el Cliente asistio o no al evento, cambiando manualmente el estado de la invitacion a "Asistida" o "No Asistida".
+			-Comunicar Cancelacion de Eventos
+				- Debe dejar en estado "Cancelada" las invitaciones asignadas.
+
+		-Eventos:
+				- Solo posible desde el usuario Administrador de Evento.
+				-Creacion
+					- Nombre corto, Descripcion, Lugar, Cupos (o numero de Invitaciones).
+				-Modificacion
+					- Descripcion
+					- Lugar
+					- Cupos o numero de invitaciones.
+				-Cancelacion
+
+		-Administrador de Eventos:
+				-Asignar Invitaciones:
+					-Numero de invitaciones (Cupos) a los Ejecutivos (VIP)
+				-Modificar Eventos:
+					- El numero de invitaciones no puede ser menor que el total de las invitaciones actualmente asignadas a los Ejecutivos.
+				-Cancelar Eventos:
+					- Se debe enviar un correo a los Ejecutivos (VIP), para que comuniquen ellos a los Clientes.
+					- Las Invitaciones ya asignadas a CLIENTES, quedan en estado "Cancelada"
+		-Invitaciones:
+				-Vista:
+					-Asignar Invitaciones a Clientes.
+					-Al quedar asignadas, las invitaciones quedan en estado "Pendiente Confirmacion".
+				-Estados:
+					- Pendiente Confirmacion
+					- Confirmada
+					- Asistida
+					- No Asistida
+					- Cancelada
+
+		-Sistema:
+				-Vista para Ingresar, Modificar Ejecutivo del Cliente y Desinscribir Cliente VIP.
+				-Vista para Ingresar, Modificar, Eliminar Ejecutivos del Cliente.
+				-Vista para Crear, Modificar y Cancelar Eventos (Administrador de Eventos)
+				-Vista de Clientes VIP de Cumpleaños los proximos 5 dias.
+				-Vista para Asignar Regalo a Clientes (VIP):
+					- Se selecciona de la Lista de Regalos del Sistema
+					- Validar que a un Cliente no se le regale el mismo Regalo dos veces.
+					- Se debe poder seleccionar un Cliente, y ver el historial de regalos que le han sido entregados.
+
+		-Lista de Regalos:
+				-Ingresar Regalo
+				-Modificar Regalo
+				-Crear Regalo?
+		-Regalo:
+			-Tipo
+			-Descripcion
+
+Sustantivos:
+
+sistema:
+		permite ingresar
+					Clientes VIP
+							debe integrarse con
+										(SCR)
+											para inscribir a
+													Clientes como VIP
+					Ejecutivos de Clientes VIP
+							rut,nombre, telefono, e-mai, fecha de ingreso al banco
+		puede asignar
+					Ejecutivo de Clientes VIP
+							a
+							Clientes VIP
+		puede modificar los datos de
+					Ejecutivo de Clientes VIP
+					Cliente VIP
+		puede eliminar
+					Ejecutivo de Clientes VIP
+								solo si 
+									El ejecutivo no esta asignado como ejecutivo de algun cliente VIP
+		
+		puede desisncribir
+					Cliente VIP
+		Puede modificar el
+					Ejecutivo de Clientes VIP
+								asignado a	
+									Cliente VIP
+
+Cliente
+		guarda y recupera
+			La informacion Personal
+					en SCR
+Eventos
+	son creados
+

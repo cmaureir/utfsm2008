@@ -1,0 +1,40 @@
+
+Pagina Renzo:
+		alumnos.usm.cl/~renzo.stanley
+
+Teorica:
+	Solo patrones GOF
+		Describir
+		Diagramar
+
+Practica:
+	Caso de Uso REAL
+		posee todos los detalles de la implementacion (usa tal tarjeta para autenticarse, etc)
+	Ejercicio
+		Diagrama de Colaboracion *
+		Diagrama de Clases *
+		Diagramas de Estado *
+
+	Contratos
+	etc.
+
+Una corredora de propiedades se dedica a administrar los arriendos de casas de cada uno de sus propietarios
+	En el caso de arriendo:
+		gestiona el contrato de arrendamiento
+		cobra la garantia
+		cobra la comision por arriendo
+			las comisiones ingresan a un sistema de contabilidad ya existente
+		cobra el arriendo mensual
+		deposita el arriendo mensual en la cuenta bancaria del propietario, restando la comision
+
+Se lleva registro de dos tipos de clientes
+	Propietarios
+	Arrendatarios
+	gerente:
+		cobro oportuno de los 
+
+contrato
+diagrama de casos de uso
+diagrama de interaccion
+diagrama de clases
+

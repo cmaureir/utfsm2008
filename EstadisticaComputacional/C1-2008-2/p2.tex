@@ -1,0 +1,42 @@
+Marzo 2009. El triunfo de nuestra selecci\'on ante Perú por las eliminatorias a Sud\'africa 2010 depende de la presencia en el juego de dos de sus estrellas:
+el pitbull Medel y Mark Gonzalez. Si ambos asisten al partido la probabilidad de que Chile gane es del 90\%. Si s\'olo asiste uno de ellos nuestras posibilidades
+bajan al 60\%. Finalmente, si no asiste niguno, la probabilidad de que perdamos o empatemos es del 70\%. Por recientes lesiones, la probabilidad de que Mark
+asista es del 75\%. Para Medel en cambio la probabilidad es del 90\%. Si la asistencia de ambos jugadores al partido es independiente de la del otro:
+\begin{itemize}
+	\item[(a)] ?`Cu\'al es la probabilidad de que Chile gane el partido?\\
+		\textbf{R:}\\
+		$P(A):$ Asiste Medel, $0.9$\\
+		$P(B):$ Asiste Mark, $0.75$\\
+		Probabilidad de que asistan ambos: $0.9\ \cdot\ 0.75\ =\ 0.675$\\
+		Probabilidad de que asista al menos uno: $P(A)+P(B)-P(A\cap B)\ =\ 0.975$\\
+		Probabilidad de que no asista ninguno: (Asista al menos 1)$^c$: $0.025$ \\
+		Probabilidad de que s\'olo asista uno: (Asista al menos 1 - Asistan ambos): $0.3$\\\\
+		Probabiliad de que Chile Gane:
+		$$P(ambos\ esten)\ +\ P(ninguno\ este)\ +\ P(solo\ uno\ este)$$
+		$$0.9\ \cdot 0.675\ +\ 0.3\ \cdot 0.025\ +\ 0.6\ \cdot 0.3$$
+		$$0.795\ =\ 79.5\%$$
+	\item[(b)] Si perdemos el partido, ?`Cu\'al es la probabilidad de que ambos jugadores hayan asistido?\\
+		\textbf{R:}\\
+		$P(A):$ Ambos asisten, 0.675\\
+		$P(B):$ Chile Pierde, 0.205\\
+		$P(B|A):$ Si ambos asisten al partido y chile pierde\\
+		$$\frac{P(B|A)\cdot P(A)}{P(B)}\ =\ \frac{0.1\cdot 0.675}{0.205}\ =\ 0.329\ =\ 32.9\%$$
+
+	\item[(c)] Si ganamos el partido, ?`Cu\'al es la probabilidad de que haya asistido al menos uno de ellos?\\
+		\textbf{R:}\\
+		$P(A):$ Al menos uno asistio, 0.975\\
+		$P(B):$ Chile Gana, 0.795\\
+	%	$P(B|A):$ Al menos uno asiste y chile gana\\
+		$P(B|A): chile\ gana\ estando\ 1\ solo\ \textbf{por}\ que\ asista\ 1\ \textbf{mas}\ chile\ gana\ estando\ los\ 2\\ \textbf{por}\ que\ esten\ los\ dos$\\
+		$P(B|A): 0.6\cdot 0.3\ +\ 0.9\cdot 0.675\ =\ 0.7875$
+		$$\frac{P(B|A)\cdot P(A)}{P(B)}\ =\ \frac{0.7875\cdot 0.975}{0.795}\ =\ 0.965\ =\ 96.5\%$$
+	\item[(d)] Si ganamos el partido, ?`Cu\'al es la probabilidad de que medel haya asistido?\\
+		\textbf{R:}\\
+		$P(A):$ Medel asista, 0.9\\
+		$P(B):$ Chile Gana, 0.795\\
+%		$P(B|A):$ solo medel asista y chile gane, que el asista + que mark no asista,\\
+		$P(B|A): Chile\ Gane\ estando\ ambos\ \textbf{por}\ que\ esten\ los\ dos\ en\ el\ partido\\ \textbf{mas}\ Gane\ estando\ 1\ \textbf{por}\ que\ solo\ medel\ vaya\ y\ mark\ no$
+		$P(B|A):0.9\cdot 0.675\ +\ 0.6\cdot 0.25\cdot 0.9\ =\ 0.7425$\\
+% $0.6\cdot 0.9 + 0.6\cdot 0.25\ =\ 0.69\ =\ 69\%$\\
+		$$\frac{P(B|A)\cdot P(A)}{P(B)}\ =\ \frac{0.7425\cdot 0.9}{0.795}\ =\ 0.917\ =\ 91.7\%$$
+\end{itemize}

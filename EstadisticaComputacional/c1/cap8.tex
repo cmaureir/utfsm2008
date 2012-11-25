@@ -1,0 +1,77 @@
+\subsection{Variables Aleatorias}
+	\subsubsection{\bf Tendencia de la variable.}
+	\subsubsubsection{Esperanza}
+	Definicion: La esperanza o valor esperado de una variable aleatoria X se define como.
+	$$ E(X) = \sum_{i=1}^n x_i \cdotp p(x_i) ,\ caso\ discreto$$
+	$$ E(X) = \int_{- \infty}^{\infty} x \cdotp p(x) ,\ caso\ continuo$$
+	En general, el valor esperado de una funci\'on g(X) de la variable aleatoria estar\'a dado por:
+	$$ E(g(X)) = \int_{- \infty}^{\infty} g(x)p(x) ,\ caso\ discreto $$
+	$$ E(g(X)) = \sum_{i=1}^{n} g(x_i)p(x_i) ,\ caso\ continuo $$
+	Notemos que la esperanza es un operador lineal:
+	$$ E(a \cdotp g(x) + b \cdotp h(x)) = a \cdotp E(g(x)) + b \cdotp E(h(x))$$
+	\subsubsubsection{Mediana}
+	Definicion: La mediana de una variable aleatoria discreta X se define como el valor $ x_0.5 $ tal que
+	$$ \sum_{x_i < x_{0.5}} p(x_i) < 0.5 $$
+	$$ \sum_{x_i \ge x_{0.5}} p(x_i) \ge 0.5 $$
+	Definicion: La mediana de una variable aleatoria continua X se define como
+	$$ x_{0.5} = F^{-1}(0.5)$$
+	Es decir
+	$$ \int_{- \infty}^{x_{0.5}} p(x) = 0.5 $$
+	\subsubsubsection{Percentiles Arbitrarios}
+	Definicion: El percentil de orden q asociado a una variable aleatoria continua se define como el valor $ x_q $ que satisface
+	$$ \sum_{x_i < x_q} p(x_i) < q  $$
+	$$ \sum_{x_i \ge x_q} p(x_i) \ge q $$
+	Con $ 0 \le q \le 1 $ .\\
+	Definicion: El percentil de orden q asociado a una variable aleatoria continua se define como
+	$$ x_q = F^{-1}(q) $$
+	Con $ 0 \le q \le 1 $ .\\
+	\subsubsubsection{Moda}
+	Definicion: Un valor m se dice una moda o valor modal de una variable aleatoria discreta X si
+	$$ m = arg\ max_{i}\ p(x_i)  $$
+	Definicion: UN valor m se dice una moda o valor modal de una variable aleatoria continua X si
+	$$ \frac{\partial f}{dx} \mid_{x=m} = 0  $$
+	\subsubsection{\bf Dispersi\'on al rededor de su tendencia.}
+	\subsubsubsection{Varianza}
+		Definicion: La varianza de una variable aleatoria X se define como 
+		$$ Var(X) = E((X - E(X))^2)  $$
+		\begin{itemize}
+			\item Caso Discreto
+				$$ Var(X) = \sum_{i=1}^{n} (x_i - E(X))^2 p(x_i) $$
+			\item Caso Continuo
+				$$ Var(X) = \int_{- \infty}^{\infty} (x - E(X))^2 p(x)dx  $$
+		\end{itemize}
+	\subsubsubsection{Desviaci\'on Est\'andar}
+		Definicion: La desviaci\'on estandar de una variable aleatoria X se define como
+		$$ \sigma = \sqrt{Var(X)}  $$
+	\subsubsubsection{Rango Inter-Cuart\'ilico}
+		Definicion: El rango inter-cuartilico asociado a una variable aleatoria se define como
+		$$ IQR = x_{3/4} - x_{3/4}  $$
+		O sea, la diferencia entre percentiles 0.75 y 0.25.
+	
+	\subsubsection{Momentos}
+		Son las medidas descriptivas que caracterizan la distribucion de probabilidad de una variable aleatoria.\\
+		\\ {\bf Idea}
+		\begin{itemize}
+		\item Generar medidas descriptivas que caractericen la distribucion de probabilidad de una variable aleatoria.
+		\item Usar potencias de la variable aleatoria, tal como los monomios de una expansion de Taylor.
+		\end{itemize}
+		Definicion: El k-\'esimo momento de una variable aleatoria X se define como
+		$$ \mu_{k}^0 = E(X^k),\ \ \ k \epsilon N  $$
+		Nota: La esperanza es el primer momento :O .
+	\subsubsection{Momentos Centrales}
+		Definicion: El k-\'esimo momento central de una variable aleatoria X se define como
+		$$ \mu_k = E((X - E(X))^k),\ \ \ k \epsilon N  $$
+		Nota: La varianza es el segundo momento central. El primer momento central es nulo :O.\\
+	\subsubsection{Funcion generadora de Momentos}
+		Definicion: La funcion generadora de momentso (fgm) asociada a una variable aleatoria X se define como
+		$$ m_x : R \rightarrow R  $$
+		$$ m_x(t) = E(exp(t \cdotp X))  $$
+		\begin{itemize}
+			\item Caso Discreto
+			$$ m_x(t) = \sum_{i=1}^n exp(t \cdotp x_i)p(x_i)  $$
+			\item Caso Continuo
+			$$ m_x(t) = \int_{-\infty}^{\infty} exp(t \cdotp x)p(x)dx  $$
+		\end{itemize}
+		Proposicion: El l-esimo momento de la fgm de una variable aleatoria X esta dado por
+		$$ \mu_{k}^0 = \frac{dm_x(t)}{dt} \mid_{t=0}  $$
+
